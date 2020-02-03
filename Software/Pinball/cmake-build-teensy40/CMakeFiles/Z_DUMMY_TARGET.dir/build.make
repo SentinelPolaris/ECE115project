@@ -83,19 +83,49 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s"
 	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/scott/dev/ECE115project/Software/Pinball/src/main.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s
 
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o: ../src/os/arch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o"
+	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o -c /Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.i"
+	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.s"
+	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.s
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o: ../src/os/interrupt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o"
+	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o -c /Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.i"
+	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.cpp > CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.s"
+	/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.cpp -o CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.s
+
 # Object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_OBJECTS = \
 "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.o" \
-"CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o" \
+"CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o"
 
 # External object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_EXTERNAL_OBJECTS =
 
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/build.make
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Z_DUMMY_TARGET"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Z_DUMMY_TARGET"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Z_DUMMY_TARGET.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

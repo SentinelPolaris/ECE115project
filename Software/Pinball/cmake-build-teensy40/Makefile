@@ -333,6 +333,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/os/arch.o: src/os/arch.cpp.o
+
+.PHONY : src/os/arch.o
+
+# target to build an object file
+src/os/arch.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o
+.PHONY : src/os/arch.cpp.o
+
+src/os/arch.i: src/os/arch.cpp.i
+
+.PHONY : src/os/arch.i
+
+# target to preprocess a source file
+src/os/arch.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.i
+.PHONY : src/os/arch.cpp.i
+
+src/os/arch.s: src/os/arch.cpp.s
+
+.PHONY : src/os/arch.s
+
+# target to generate assembly for a file
+src/os/arch.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.s
+.PHONY : src/os/arch.cpp.s
+
+src/os/interrupt.o: src/os/interrupt.cpp.o
+
+.PHONY : src/os/interrupt.o
+
+# target to build an object file
+src/os/interrupt.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o
+.PHONY : src/os/interrupt.cpp.o
+
+src/os/interrupt.i: src/os/interrupt.cpp.i
+
+.PHONY : src/os/interrupt.i
+
+# target to preprocess a source file
+src/os/interrupt.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.i
+.PHONY : src/os/interrupt.cpp.i
+
+src/os/interrupt.s: src/os/interrupt.cpp.s
+
+.PHONY : src/os/interrupt.s
+
+# target to generate assembly for a file
+src/os/interrupt.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.s
+.PHONY : src/os/interrupt.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -360,6 +414,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/os/arch.o"
+	@echo "... src/os/arch.i"
+	@echo "... src/os/arch.s"
+	@echo "... src/os/interrupt.o"
+	@echo "... src/os/interrupt.i"
+	@echo "... src/os/interrupt.s"
 .PHONY : help
 
 

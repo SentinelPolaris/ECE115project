@@ -471,13 +471,31 @@
 		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30/license.txt">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/flags.hpp">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
 		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/main.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/pwm.hpp">
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/flags.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/interface.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/thread.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/pwm.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/CMakeLists.txt">

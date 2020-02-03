@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30/Adafruit_PWMServoDriver.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/main.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"
+  "/Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o"
+  "/Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
