@@ -279,6 +279,33 @@ PLATFORMIO_MONITOR/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_MONITOR.dir/build.make CMakeFiles/PLATFORMIO_MONITOR.dir/build
 .PHONY : PLATFORMIO_MONITOR/fast
 
+.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.o: .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.o
+
+.PHONY : .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.o
+
+# target to build an object file
+.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.o
+.PHONY : .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.o
+
+.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.i: .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.i
+
+.PHONY : .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.i
+
+# target to preprocess a source file
+.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.i
+.PHONY : .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.i
+
+.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.s: .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.s
+
+.PHONY : .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.s
+
+# target to generate assembly for a file
+.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.s
+.PHONY : .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.s
+
 .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.o: .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.o
 
 .PHONY : .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.o
@@ -408,6 +435,9 @@ help:
 	@echo "... PLATFORMIO_BUILD"
 	@echo "... PLATFORMIO_BUILD_VERBOSE"
 	@echo "... PLATFORMIO_MONITOR"
+	@echo "... .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.o"
+	@echo "... .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.i"
+	@echo "... .pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.s"
 	@echo "... .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.o"
 	@echo "... .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.i"
 	@echo "... .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.s"

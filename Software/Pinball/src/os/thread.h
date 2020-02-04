@@ -8,6 +8,7 @@
 
 #include "arch.h"
 #include <TeensyThreads.h>
+#include "../pwm.h"
 
 void serialCommander() {
     while(true) {
@@ -16,6 +17,12 @@ void serialCommander() {
         LOG(Serial.available());
         threads.delay(200);  // FIXME: Not fully working - does not update
     }
+}
+
+void PWMTestThread() {
+    PWM pwmTest;
+    threads.delay(2000);
+    pwmTest.set(0, 100);
 }
 
 #endif //PINBALL_THREAD_H

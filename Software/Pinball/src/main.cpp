@@ -14,11 +14,11 @@ volatile int threadID;
 int main() {
     SERIAL_SETUP(115200);
     threadID = threads.addThread(serialCommander);
-    PWM pwmTest;
 
     while (true) {
         LOG(threads.getState(threadID));
-        threads.delay(200);
-        pwmTest.set(0, 10);
+        threads.delay(2000);
+        threads.addThread(PWMTestThread);
+        return 0;
     }
 }

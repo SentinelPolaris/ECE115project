@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/Adafruit_MCP23017.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_MCP23017_Arduino_Library_ID334/Adafruit_MCP23017.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30/Adafruit_PWMServoDriver.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/main.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o"
@@ -15,6 +16,7 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../src"
+  "../.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334"
   "/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads"
   "../.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30"
   "/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/Wire"

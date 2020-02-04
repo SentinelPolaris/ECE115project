@@ -9,6 +9,7 @@
             "includePath": [
                 "/Users/scott/dev/ECE115project/Software/Pinball/include",
                 "/Users/scott/dev/ECE115project/Software/Pinball/src",
+                "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334",
                 "/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads",
                 "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30",
                 "/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/Wire",
@@ -121,6 +122,7 @@
                 "path": [
                     "/Users/scott/dev/ECE115project/Software/Pinball/include",
                     "/Users/scott/dev/ECE115project/Software/Pinball/src",
+                    "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334",
                     "/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads",
                     "/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30",
                     "/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/Wire",

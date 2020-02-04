@@ -96,6 +96,7 @@
 				<Compiler>
 					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/include"/>
 					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/src"/>
+					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334"/>
 					<Add directory="/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads"/>
 					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30"/>
 					<Add directory="/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/Wire"/>
@@ -230,6 +231,7 @@
 				<Compiler>
 					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/include"/>
 					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/src"/>
+					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334"/>
 					<Add directory="/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads"/>
 					<Add directory="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30"/>
 					<Add directory="/Users/scott/.platformio/packages/framework-arduinoteensy/libraries/Wire"/>
@@ -426,6 +428,42 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/.library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/Adafruit_MCP23017.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/Adafruit_MCP23017.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/examples/button/button.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/examples/interrupt/interrupt.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/examples/toggle/toggle.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/license.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30/.github/ISSUE_TEMPLATE.md">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
