@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=teensy40 -G "CodeBlocks - Unix Makefiles" /Users/scott/dev/ECE115project/Software/Pinball
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40
