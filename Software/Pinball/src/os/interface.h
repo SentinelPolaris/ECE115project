@@ -6,16 +6,17 @@
 #define PINBALL_INTERFACE_H
 
 #include "flags.h"
-#include "thread.h"
 
-void wireStart() {
-    // TODO: Implement timeout warnings
-    while(WIRE_CURRENTLY_USED) {threads.yield();}
-    WIRE_CURRENTLY_USED = true;
+void wireInit() {
+    Wire.setClock(1000000);
 }
 
-void wireEnd() {
-    // TODO: Assert true
-    WIRE_CURRENTLY_USED = false;
+void serialInit() {
+    if (!SERIAL_SET_UP) {
+        Serial.begin(115200);
+    } else {
+        LOGWARNING("Duplicated serialInit invoked! Ignored.");
+    }
 }
+
 #endif //PINBALL_INTERFACE_H

@@ -6,13 +6,18 @@
 #define PINBALL_ARCH_H
 
 #include <Arduino.h>
+#include <TeensyThreads.h>
+#include <Wire.h>
 
-#define SERIAL_SETUP(baudRate)  Serial.begin(baudRate)
+// Handy macros
 #define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
-#define PRINT_MILLIS            Serial.print("[");Serial.print(millis(),8);Serial.print("] ");
+#define PRINT_MILLIS            Serial.print("[");Serial.print(millis());Serial.print("] ");
 #define LOG(param)              PRINT_MILLIS PRINT_LINE Serial.println(param)
 #define LOGERROR(param)         Serial.print("[ERROR]@"); LOG(param)
+#define LOGWARNING(param)       Serial.print("[WARN]@"); LOG(param)
 #define PRINT(msg)              Serial.print(msg)
+#define TIMER_START             __timer_temp = micros();
+#define TIMER_END               LOG(micros() - __timer_temp);
 
 // NOTE: Doing millis() with Serial.printf on thread will cause thread error, and halts thread
 //#define SERIAL_SOFTWARE_VER()   LOG("compiled on %s %s, gcc %d.%d.%d", __DATE__, __TIME__, __GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__)
@@ -25,8 +30,17 @@ void setup();
 void loop();
 
 // IRQ Pin Defs
-const uint8_t IOEXP_A_IRQ = 0;
-const uint8_t IOEXP_B_IRQ = 1;
+const uint8_t IRQ = 3;
+
+// Arch Implement Specific Delays / Yields
+inline void dly(uint32_t ms) {
+    threads.delay(ms);
+}
+
+inline void yd() {
+    threads.yield();
+}
+
 
 //void __attribute__((__noreturn__)) os_panic(void) {
 //    LOGERROR("Panic handler called from 0x%08x !!!", __builtin_return_address(0));

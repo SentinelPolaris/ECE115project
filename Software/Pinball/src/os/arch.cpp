@@ -3,7 +3,9 @@
 //
 #include "arch.h"
 
-void setup() {}
+void setup() {
+    dly(500);  // NOTE: USB Terminal doesn't work if enabled at the beginning of bootup
+}
 
 void loop() {
     main();

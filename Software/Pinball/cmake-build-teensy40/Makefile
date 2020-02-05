@@ -333,6 +333,33 @@ PLATFORMIO_MONITOR/fast:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.s
 .PHONY : .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.cpp.s
 
+src/io.o: src/io.cpp.o
+
+.PHONY : src/io.o
+
+# target to build an object file
+src/io.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/io.cpp.o
+.PHONY : src/io.cpp.o
+
+src/io.i: src/io.cpp.i
+
+.PHONY : src/io.i
+
+# target to preprocess a source file
+src/io.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/io.cpp.i
+.PHONY : src/io.cpp.i
+
+src/io.s: src/io.cpp.s
+
+.PHONY : src/io.s
+
+# target to generate assembly for a file
+src/io.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/io.cpp.s
+.PHONY : src/io.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -441,6 +468,9 @@ help:
 	@echo "... .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.o"
 	@echo "... .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.i"
 	@echo "... .pio/libdeps/teensy40/Adafruit_PWM_Servo_Driver_Library_ID30/Adafruit_PWMServoDriver.s"
+	@echo "... src/io.o"
+	@echo "... src/io.i"
+	@echo "... src/io.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
