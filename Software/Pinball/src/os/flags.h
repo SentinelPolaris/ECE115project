@@ -7,19 +7,21 @@
 
 #include "arch.h"
 
-volatile uint32_t __timer_temp = 0;
-volatile bool SERIAL_SET_UP = false;
-volatile bool WIRE_DEFINED_FLAG = false;
-volatile bool WIRE_CURRENTLY_USED = false;
-volatile bool IO_IRQ_WAITING = false;
+extern volatile uint32_t __timer_temp;
+extern volatile bool SERIAL_SET_UP;
+extern volatile bool WIRE_DEFINED_FLAG;
+extern volatile bool WIRE_CURRENTLY_USED;
+extern volatile bool IO_IRQ_WAITING;
 
-void wireLock() {
+extern void IOISR();
+
+inline void wireLock() {
     // TODO: Implement timeout warnings
     while (WIRE_CURRENTLY_USED) { yd(); }
     WIRE_CURRENTLY_USED = true;
 }
 
-void wireUnlock() {
+inline void wireUnlock() {
     // TODO: Assert true
     WIRE_CURRENTLY_USED = false;
 }

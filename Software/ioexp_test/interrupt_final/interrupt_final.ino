@@ -39,10 +39,11 @@ void setup() {
   attachInterrupt(3, isr, FALLING);
   mcp.readGPIOAB();
 
+  pinMode(11, INPUT);
 }
 
 void loop() {
-//    mcp.readGPIOAB();
+  //    mcp.readGPIOAB();
 
   //    uint8_t pin = mcp.getLastInterruptPin();
   //    uint8_t val = mcp.getLastInterruptPinValue();
@@ -54,23 +55,28 @@ void loop() {
   //    }
   // put your main code here, to run repeatedly:
   if (IRQ_FLAG) {
+    delay(100);
     uint8_t pin = mcp.getLastInterruptPin();
     uint8_t val = mcp.getLastInterruptPinValue();
     // TODO: Assert pin
-//    mcp.readGPIOAB();
+    //    mcp.readGPIOAB();
     //    Serial.print(pin); Serial.print(":"); Serial.println(val);
     // FIXME: Doing random mcp io in this region would cause hang randomly
     for (bool debounceExit = true; debounceExit;) {
       while (mcp.digitalRead(pin) == val) {}
       uint32_t timeStart = millis();
       while (millis() - timeStart < 20) {
-//        if (mcp.digitalRead(pin) == val) {
-//          continue;
-//        }
+        //        if (mcp.digitalRead(pin) == val) {
+        //          continue;
+        //        }
       }
       debounceExit = false;
     }
     IRQ_FLAG = false;
-//    if(IRQ_SKIPPED) {mcp.getLastInterruptPinValue(); IRQ_SKIPPED = false;}
+    //    if(IRQ_SKIPPED) {mcp.getLastInterruptPinValue(); IRQ_SKIPPED = false;}
+  }
+  else if (digitalRead(11)) {
+    Serial.println("Force Clearing flag");
+    mcp.readGPIOAB();
   }
 }

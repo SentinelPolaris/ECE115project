@@ -8,6 +8,7 @@
 #include <Arduino.h>
 #include <TeensyThreads.h>
 #include <Wire.h>
+#include "config.h"
 
 // Handy macros
 #define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
@@ -16,6 +17,7 @@
 #define LOGERROR(param)         Serial.print("[ERROR]@"); LOG(param)
 #define LOGWARNING(param)       Serial.print("[WARN]@"); LOG(param)
 #define PRINT(msg)              Serial.print(msg)
+#define PRINTLN(msg)              Serial.println(msg)
 #define TIMER_START             __timer_temp = micros();
 #define TIMER_END               LOG(micros() - __timer_temp);
 
@@ -26,11 +28,13 @@
 
 // All Arduino Core
 extern int main();
+
 void setup();
+
 void loop();
 
 // IRQ Pin Defs
-const uint8_t IRQ = 3;
+extern const uint8_t IRQ;
 
 // Arch Implement Specific Delays / Yields
 inline void dly(uint32_t ms) {

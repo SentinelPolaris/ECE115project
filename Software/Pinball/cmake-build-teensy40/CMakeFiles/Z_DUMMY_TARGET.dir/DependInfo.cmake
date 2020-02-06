@@ -9,7 +9,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/scott/dev/ECE115project/Software/Pinball/src/io.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/io.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/main.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o"
-  "/Users/scott/dev/ECE115project/Software/Pinball/src/os/interrupt.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o"
+  "/Users/scott/dev/ECE115project/Software/Pinball/src/os/flags.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/flags.cpp.o"
+  "/Users/scott/dev/ECE115project/Software/Pinball/src/os/interface.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

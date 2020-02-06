@@ -414,32 +414,59 @@ src/os/arch.cpp.s:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.s
 .PHONY : src/os/arch.cpp.s
 
-src/os/interrupt.o: src/os/interrupt.cpp.o
+src/os/flags.o: src/os/flags.cpp.o
 
-.PHONY : src/os/interrupt.o
+.PHONY : src/os/flags.o
 
 # target to build an object file
-src/os/interrupt.cpp.o:
-	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.o
-.PHONY : src/os/interrupt.cpp.o
+src/os/flags.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/flags.cpp.o
+.PHONY : src/os/flags.cpp.o
 
-src/os/interrupt.i: src/os/interrupt.cpp.i
+src/os/flags.i: src/os/flags.cpp.i
 
-.PHONY : src/os/interrupt.i
+.PHONY : src/os/flags.i
 
 # target to preprocess a source file
-src/os/interrupt.cpp.i:
-	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.i
-.PHONY : src/os/interrupt.cpp.i
+src/os/flags.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/flags.cpp.i
+.PHONY : src/os/flags.cpp.i
 
-src/os/interrupt.s: src/os/interrupt.cpp.s
+src/os/flags.s: src/os/flags.cpp.s
 
-.PHONY : src/os/interrupt.s
+.PHONY : src/os/flags.s
 
 # target to generate assembly for a file
-src/os/interrupt.cpp.s:
-	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interrupt.cpp.s
-.PHONY : src/os/interrupt.cpp.s
+src/os/flags.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/flags.cpp.s
+.PHONY : src/os/flags.cpp.s
+
+src/os/interface.o: src/os/interface.cpp.o
+
+.PHONY : src/os/interface.o
+
+# target to build an object file
+src/os/interface.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.o
+.PHONY : src/os/interface.cpp.o
+
+src/os/interface.i: src/os/interface.cpp.i
+
+.PHONY : src/os/interface.i
+
+# target to preprocess a source file
+src/os/interface.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.i
+.PHONY : src/os/interface.cpp.i
+
+src/os/interface.s: src/os/interface.cpp.s
+
+.PHONY : src/os/interface.s
+
+# target to generate assembly for a file
+src/os/interface.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.s
+.PHONY : src/os/interface.cpp.s
 
 # Help Target
 help:
@@ -477,9 +504,12 @@ help:
 	@echo "... src/os/arch.o"
 	@echo "... src/os/arch.i"
 	@echo "... src/os/arch.s"
-	@echo "... src/os/interrupt.o"
-	@echo "... src/os/interrupt.i"
-	@echo "... src/os/interrupt.s"
+	@echo "... src/os/flags.o"
+	@echo "... src/os/flags.i"
+	@echo "... src/os/flags.s"
+	@echo "... src/os/interface.o"
+	@echo "... src/os/interface.i"
+	@echo "... src/os/interface.s"
 .PHONY : help
 
 

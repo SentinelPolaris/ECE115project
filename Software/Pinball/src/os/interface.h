@@ -7,16 +7,8 @@
 
 #include "flags.h"
 
-void wireInit() {
-    Wire.setClock(1000000);
-}
+void wireInit();
 
-void serialInit() {
-    if (!SERIAL_SET_UP) {
-        Serial.begin(115200);
-    } else {
-        LOGWARNING("Duplicated serialInit invoked! Ignored.");
-    }
-}
+void serialInit();
 
 #endif //PINBALL_INTERFACE_H
