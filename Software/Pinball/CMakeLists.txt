@@ -86,4 +86,4 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_executable(Z_DUMMY_TARGET ${SRC_LIST})
+add_executable(Z_DUMMY_TARGET ${SRC_LIST} src/ThreadManager.h src/test/testDC.h src/io.cpp src/io.h src/test/testIOExp.h src/os/config.h src/os/interface.cpp src/os/flags.cpp)

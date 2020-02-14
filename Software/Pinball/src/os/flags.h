@@ -5,9 +5,25 @@
 #ifndef PINBALL_FLAGS_H
 #define PINBALL_FLAGS_H
 
-bool WIRE_DEFINED_FLAG = false;
-bool WIRE_CURRENTLY_USED = false;
-//bool IO0_FLAG = false;
-//bool IO1_FLAG = false;
+#include "arch.h"
+
+extern volatile uint32_t __timer_temp;
+extern volatile bool SERIAL_SET_UP;
+extern volatile bool WIRE_DEFINED_FLAG;
+extern volatile bool WIRE_CURRENTLY_USED;
+extern volatile bool IO_IRQ_WAITING;
+
+extern void IOISR();
+
+inline void wireLock() {
+    // TODO: Implement timeout warnings
+    while (WIRE_CURRENTLY_USED) { yd(); }
+    WIRE_CURRENTLY_USED = true;
+}
+
+inline void wireUnlock() {
+    // TODO: Assert true
+    WIRE_CURRENTLY_USED = false;
+}
 
 #endif //PINBALL_FLAGS_H
