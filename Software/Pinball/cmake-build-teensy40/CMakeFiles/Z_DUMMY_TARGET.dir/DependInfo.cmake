@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/scott/dev/ECE115project/Software/Pinball/src/os/arch.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/os/flags.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/flags.cpp.o"
   "/Users/scott/dev/ECE115project/Software/Pinball/src/os/interface.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.o"
+  "/Users/scott/dev/ECE115project/Software/Pinball/src/peri/audio.cpp" "/Users/scott/dev/ECE115project/Software/Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/src/peri/audio.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

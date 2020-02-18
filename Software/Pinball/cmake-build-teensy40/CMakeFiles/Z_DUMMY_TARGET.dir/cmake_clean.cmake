@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/os/arch.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/os/flags.cpp.o"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.o"
+  "CMakeFiles/Z_DUMMY_TARGET.dir/src/peri/audio.cpp.o"
   "Z_DUMMY_TARGET.pdb"
   "Z_DUMMY_TARGET"
 )

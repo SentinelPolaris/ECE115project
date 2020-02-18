@@ -545,6 +545,12 @@
 		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/os/thread.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/peri/audio.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/peri/audio.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="/Users/scott/dev/ECE115project/Software/Pinball/src/peri/ioexp.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>

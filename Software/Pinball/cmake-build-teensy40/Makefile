@@ -468,6 +468,33 @@ src/os/interface.cpp.s:
 	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/os/interface.cpp.s
 .PHONY : src/os/interface.cpp.s
 
+src/peri/audio.o: src/peri/audio.cpp.o
+
+.PHONY : src/peri/audio.o
+
+# target to build an object file
+src/peri/audio.cpp.o:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/peri/audio.cpp.o
+.PHONY : src/peri/audio.cpp.o
+
+src/peri/audio.i: src/peri/audio.cpp.i
+
+.PHONY : src/peri/audio.i
+
+# target to preprocess a source file
+src/peri/audio.cpp.i:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/peri/audio.cpp.i
+.PHONY : src/peri/audio.cpp.i
+
+src/peri/audio.s: src/peri/audio.cpp.s
+
+.PHONY : src/peri/audio.s
+
+# target to generate assembly for a file
+src/peri/audio.cpp.s:
+	$(MAKE) -f CMakeFiles/Z_DUMMY_TARGET.dir/build.make CMakeFiles/Z_DUMMY_TARGET.dir/src/peri/audio.cpp.s
+.PHONY : src/peri/audio.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -510,6 +537,9 @@ help:
 	@echo "... src/os/interface.o"
 	@echo "... src/os/interface.i"
 	@echo "... src/os/interface.s"
+	@echo "... src/peri/audio.o"
+	@echo "... src/peri/audio.i"
+	@echo "... src/peri/audio.s"
 .PHONY : help
 
 

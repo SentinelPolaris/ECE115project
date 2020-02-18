@@ -11,15 +11,26 @@
 #include "config.h"
 
 // Handy macros
+// do{..multiline statement}while(0) is a hack to make sure this works as single statement
+// for example below a if without {}
 #define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
 #define PRINT_MILLIS            Serial.print("[");Serial.print(millis());Serial.print("] ");
-#define LOG(param)              PRINT_MILLIS PRINT_LINE Serial.println(param)
-#define LOGERROR(param)         Serial.print("[ERROR]@"); LOG(param)
-#define LOGWARNING(param)       Serial.print("[WARN]@"); LOG(param)
+#define LOG(param)              do{PRINT_MILLIS PRINT_LINE Serial.println(param);}while(0)
+#define LOGA(param)             do{PRINT_MILLIS PRINT_LINE Serial.print(param);}while(0)
+#define LOGERROR(param)         do{Serial.print("[ERROR]@"); LOG(param);}while(0)
+#define LOGWARNING(param)       do{Serial.print("[WARN]@"); LOG(param);}while(0)
 #define PRINT(msg)              Serial.print(msg)
-#define PRINTLN(msg)              Serial.println(msg)
+#define PRINTLN(msg)            Serial.println(msg)
 #define TIMER_START             __timer_temp = micros();
 #define TIMER_END               LOG(micros() - __timer_temp);
+
+#if DEBUG==1
+#define ASSERT_FATAL(cond, msg) do{if(!cond){LOGERROR(msg);}}while(0)
+#define ASSERT_WARN(cond, msg)  do{if(!cond){LOGWARNING(msg);}}while(0)
+#else
+#define ASSERT_FATAL(cond, msg) do{}while(0)  // Do nothing for assert
+#define ASSERT_WARN(cond, msg)  do{}while(0)  // Do nothing for assert
+#endif
 
 // NOTE: Doing millis() with Serial.printf on thread will cause thread error, and halts thread
 //#define SERIAL_SOFTWARE_VER()   LOG("compiled on %s %s, gcc %d.%d.%d", __DATE__, __TIME__, __GNUC__, __GNUC_MINOR__, __GNUC_PATCHLEVEL__)
