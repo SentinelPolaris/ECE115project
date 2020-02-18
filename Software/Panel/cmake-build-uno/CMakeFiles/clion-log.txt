@@ -1,0 +1,8 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=uno -G "CodeBlocks - Unix Makefiles" /Users/scott/dev/ECE115project/Software/Panel
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/scott/dev/ECE115project/Software/Panel/cmake-build-uno
+
+Problems were encountered while collecting compiler information:
+	avr-g++: error: unrecognized command line option '-mmacosx-version-min=10.14'
+	avr-gcc: error: unrecognized command line option '-mmacosx-version-min=10.14'

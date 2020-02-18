@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Panel" targetName="PLATFORMIO_PROGRAM" />
+      <config projectName="Panel" targetName="Z_DUMMY_TARGET" />
+      <config projectName="Panel" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
+      <config projectName="Panel" targetName="PLATFORMIO_BUILD_VERBOSE" />
+      <config projectName="Panel" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="Panel" targetName="PLATFORMIO_MONITOR" />
+      <config projectName="Panel" targetName="PLATFORMIO_UPLOAD" />
+      <config projectName="Panel" targetName="DEBUG" />
+      <config projectName="Panel" targetName="PLATFORMIO_DEVICE_LIST" />
+      <config projectName="Panel" targetName="PLATFORMIO_BUILD" />
+      <config projectName="Panel" targetName="PLATFORMIO_UPDATE_ALL" />
+      <config projectName="Panel" targetName="PLATFORMIO" />
+      <config projectName="Panel" targetName="Panel" />
+      <config projectName="Panel" targetName="PLATFORMIO_CLEAN" />
+      <config projectName="Panel" targetName="PLATFORMIO_UPLOADFS" />
+      <config projectName="Panel" targetName="PLATFORMIO_TEST" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="uno" CONFIG_NAME="uno" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pinball/src/peri/audio.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Pinball/src/peri/audio.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Electrical/PCB/MultiTB/eagle.epf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Electrical/PCB/MultiTB/eagle.epf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Electrical/PCB/TeensyBreakout/eagle.epf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Electrical/PCB/TeensyBreakout/eagle.epf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Pinball.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Pinball.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/os/arch.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/os/arch.h" afterDir="false" />
+    </list>
+    <ignored path="platformio.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/cmake-build-uno/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:uno" />
+  <component name="FavoritesManager">
+    <favorites_list name="Panel" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platformio.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1472">
+              <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/4.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="114" column="34" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/Picopixel.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="638">
+              <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>^</find>
+      <find>GFXFont</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Z_DUMMY_TARGET" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1440" />
+    <option name="y" value="1103" />
+    <option name="width" value="1400" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>C/C++</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Panel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="Adafruit GFX Library_Edit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panel" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="Adafruit GFX Library_Edit" type="462c0819:PsiDirectoryNode" />
+              <item name="Fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FullScreen" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/platformio.ini" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.PLATFORMIO_UPLOAD">
+    <configuration name="PLATFORMIO_BUILD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_BUILD" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_BUILD_DEBUG" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_BUILD_DEBUG" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_BUILD_VERBOSE" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_BUILD_VERBOSE" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_CLEAN" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_CLEAN" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_DEVICE_LIST" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_DEVICE_LIST" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_MONITOR" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_MONITOR" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_PROGRAM" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_PROGRAM" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_REBUILD_PROJECT_INDEX" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_REBUILD_PROJECT_INDEX" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_TEST" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_TEST" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_UPDATE" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_UPDATE_ALL" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_UPLOAD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_UPLOAD" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PLATFORMIO_UPLOADFS" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="PLATFORMIO_UPLOADFS" CONFIG_NAME="uno">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Z_DUMMY_TARGET" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="Z_DUMMY_TARGET" CONFIG_NAME="uno" RUN_TARGET_PROJECT_NAME="Panel" RUN_TARGET_NAME="Z_DUMMY_TARGET">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Panel" TARGET_NAME="Panel" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.PLATFORMIO_UPDATE" />
+      <item itemvalue="CMake Application.PLATFORMIO_BUILD" />
+      <item itemvalue="CMake Application.PLATFORMIO_BUILD_DEBUG" />
+      <item itemvalue="CMake Application.PLATFORMIO_BUILD_VERBOSE" />
+      <item itemvalue="CMake Application.PLATFORMIO_CLEAN" />
+      <item itemvalue="CMake Application.PLATFORMIO_DEVICE_LIST" />
+      <item itemvalue="CMake Application.PLATFORMIO_MONITOR" />
+      <item itemvalue="CMake Application.PLATFORMIO_PROGRAM" />
+      <item itemvalue="CMake Application.PLATFORMIO_REBUILD_PROJECT_INDEX" />
+      <item itemvalue="CMake Application.PLATFORMIO_TEST" />
+      <item itemvalue="CMake Application.PLATFORMIO_UPLOAD" />
+      <item itemvalue="CMake Application.PLATFORMIO_UPLOADFS" />
+      <item itemvalue="CMake Application.Z_DUMMY_TARGET" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="" />
+      <created>1435919971910</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1435919971910</updated>
+      <workItem from="1581981476393" duration="3367000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3402000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1440" y="1103" width="1400" height="877" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" id="Project" order="0" visible="true" weight="0.179676" />
+      <window_info anchor="bottom" id="CMake" />
+      <window_info anchor="bottom" id="Serial Monitor" />
+      <window_info anchor="bottom" id="TODO" weight="0.32769832" />
+      <window_info anchor="bottom" id="Find" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.3654096" />
+      <window_info anchor="right" id="make" />
+      <window_info anchor="right" id="Database" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/gfxfont.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/FreeSerifItalic24pt7b.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/fontconvert/fontconvert_win.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/fontconvert/fontconvert.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/fontconvert/makefonts.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/Org_01.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/Tiny3x3a2pt7b.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_SPITFT.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="948" column="1" lean-forward="true" selection-start-line="948" selection-start-column="1" selection-end-line="948" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformio.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/4.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="114" column="34" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/Picopixel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1472">
+          <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
