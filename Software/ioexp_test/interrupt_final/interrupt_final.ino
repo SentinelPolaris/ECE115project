@@ -3,7 +3,7 @@ Adafruit_MCP23017 mcp;
 volatile boolean IRQ_FLAG = false;
 volatile uint32_t FLAG_COUNT = 0;
 volatile boolean IRQ_SKIPPED = false;
-uint8_t IRQ = 3;
+uint8_t IRQ = 2;
 
 
 void isr() {
@@ -28,15 +28,15 @@ void setup() {
   mcp.setupInterrupts(true, false, LOW);
 
 
-  mcp.pinMode(7, INPUT);
-  mcp.pullUp(7, HIGH);  // turn on a 100K pullup internally
-  mcp.setupInterruptPin(7, RISING);
+  mcp.pinMode(0, INPUT);
+  mcp.pullUp(0, HIGH);  // turn on a 100K pullup internally
+  mcp.setupInterruptPin(0, RISING);
 
   //  mcp.pinMode(6, INPUT);
   //  mcp.pullUp(6, HIGH);  // turn on a 100K pullup internally
 
   Serial.begin(115200);
-  attachInterrupt(3, isr, FALLING);
+  attachInterrupt(2, isr, FALLING);
   mcp.readGPIOAB();
 
   pinMode(11, INPUT);
@@ -45,14 +45,14 @@ void setup() {
 void loop() {
   //    mcp.readGPIOAB();
 
-  //    uint8_t pin = mcp.getLastInterruptPin();
-  //    uint8_t val = mcp.getLastInterruptPinValue();
-  //    if (pin != 255) {
-  //      Serial.print("##");
-  //      Serial.print(pin);
-  //      Serial.print(":");
-  //      Serial.println(val);
-  //    }
+      uint8_t pin = mcp.getLastInterruptPin();
+      uint8_t val = mcp.getLastInterruptPinValue();
+      if (pin != 255) {
+        Serial.print("##");
+        Serial.print(pin);
+        Serial.print(":");
+        Serial.println(val);
+      }
   // put your main code here, to run repeatedly:
   if (IRQ_FLAG) {
     delay(100);
