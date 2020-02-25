@@ -12,8 +12,8 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug",
-            "executable": "c:/Users/drill/Documents/GitHub/ECE115project/Software/Pinball/.pio/build/teensy40/firmware.elf",
-            "toolchainBinDir": "C:/Users/drill/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "executable": "/Users/scott/dev/ECE115project/Software/Pinball/.pio/build/teensy40/firmware.elf",
+            "toolchainBinDir": "/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "preLaunchTask": {
                 "type": "PlatformIO",
                 "task": "Pre-Debug"
@@ -24,8 +24,8 @@
             "type": "platformio-debug",
             "request": "launch",
             "name": "PIO Debug (skip Pre-Debug)",
-            "executable": "c:/Users/drill/Documents/GitHub/ECE115project/Software/Pinball/.pio/build/teensy40/firmware.elf",
-            "toolchainBinDir": "C:/Users/drill/.platformio/packages/toolchain-gccarmnoneeabi/bin",
+            "executable": "/Users/scott/dev/ECE115project/Software/Pinball/.pio/build/teensy40/firmware.elf",
+            "toolchainBinDir": "/Users/scott/.platformio/packages/toolchain-gccarmnoneeabi/bin",
             "internalConsoleOptions": "openOnSessionStart"
         }
     ]

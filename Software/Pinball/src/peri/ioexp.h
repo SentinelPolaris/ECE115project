@@ -12,16 +12,20 @@ class DIO {
 public:
     DIO() {
         wireLock();  // Locks wire interface
-        pinMode(IRQ, INPUT);
+        pinMode(IRQ, INPUT_PULLUP);
         attachInterrupt(IRQ, IOISR, FALLING);
         mcp.begin();
         mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
 
-        mcp.pinMode(7, INPUT);
-        mcp.pullUp(7, HIGH);  // turn on a 100K pullup internally
-        mcp.setupInterruptPin(7, RISING);
+        configure_ir_gate(0);
         wireUnlock();
         reset();
+    }
+
+    void configure_ir_gate(uint8_t p) {
+        mcp.pinMode(p, INPUT);
+        mcp.pullUp(p, LOW);  // turn on a 100K pulldown internally
+        mcp.setupInterruptPin(p, RISING);
     }
 
     void reset() {
