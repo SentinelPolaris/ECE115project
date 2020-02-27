@@ -32,9 +32,7 @@ public:
         uint16_t endTime = (4095 * dutyCycle) / 100;
         wireLock();
         pwm.setPWM(port, 0, endTime);
-        LOG("Set");
         wireUnlock();
-        LOG("Done");
     }
 
 protected:

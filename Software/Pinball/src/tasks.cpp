@@ -11,7 +11,7 @@ extern xQueueHandle testQueue;
 
 void get_task_state() {
     // Credit: https://blog.csdn.net/zhzht19861011/article/details/50717549?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
-#define MAX_TASK_NUM 10
+#define MAX_TASK_NUM 30
     const char task_state[] = {'r', 'R', 'B', 'S', 'D'};
     volatile UBaseType_t uxArraySize, x;
     uint32_t ulTotalRunTime, ulStatsAsPercentage;
@@ -61,8 +61,14 @@ void get_task_state() {
 }
 
 void vHeartBeatTask(void *arg) {
+//    char buf[200];
     for(;;) {
         get_task_state();
+//        // vTaskGetRunTimeStats kinda broken
+//        // https://www.freertos.org/rtos-run-time-stats.html
+//        // https://github.com/discord-intech/FreeRTOS-Teensy4/issues/3
+//        vTaskGetRunTimeStats(buf);
+//        LOG(buf);
         dly(5000);
     }
 }

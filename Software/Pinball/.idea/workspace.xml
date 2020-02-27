@@ -27,12 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/peri/peri.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/os/arch.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/arch.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/peri/ioexp.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/peri/ioexp.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/peri/pwm.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/peri/pwm.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tasks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks.cpp" afterDir="false" />
     </list>
@@ -57,39 +53,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="207">
+              <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
               <folding>
                 <element signature="e#135#155#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/tasks.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
-              <folding>
-                <element signature="e#135#155#0" expanded="true" />
-                <element signature="e#194#2320#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/os/arch.h">
+        <entry file="file://$PROJECT_DIR$/src/tasks.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+            <state relative-caret-position="299">
+              <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
               <folding>
-                <element signature="e#188#217#0" expanded="true" />
+                <element signature="e#135#155#0" expanded="true" />
+                <element signature="e#246#2372#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOS.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="712" column="36" lean-forward="true" selection-start-line="712" selection-start-column="36" selection-end-line="712" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOSConfig_default.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -102,6 +104,7 @@
       <find>xTaskCreate</find>
       <find>vTaskDelay((200L * configTICK_RATE_HZ) / 1000L);</find>
       <find>xQueueGenericSend</find>
+      <find>portCONFI</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -122,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/peri/pwm.h" />
         <option value="$PROJECT_DIR$/src/os/arch.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOSConfig_default.h" />
         <option value="$PROJECT_DIR$/src/tasks.cpp" />
       </list>
     </option>
@@ -226,7 +230,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="CMake Application.PLATFORMIO_UPLOAD">
+  <component name="RunManager" selected="CMake Application.PLATFORMIO_BUILD">
     <configuration name="PLATFORMIO_BUILD" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pinball" TARGET_NAME="PLATFORMIO_BUILD" CONFIG_NAME="teensy40">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -333,12 +337,12 @@
       <option name="presentableId" value="Default" />
       <updated>1435919971910</updated>
       <workItem from="1582781376949" duration="9668000" />
-      <workItem from="1582793360519" duration="7915000" />
+      <workItem from="1582793360519" duration="10991000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20562000" />
+    <option name="totallyTimeSpent" value="23638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="232" y="1103" width="1440" height="877" extended-state="6" />
@@ -355,7 +359,7 @@
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.2249675" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.15344603" />
       <window_info anchor="right" id="make" order="0" />
       <window_info anchor="right" id="Database" order="1" />
     </layout>
@@ -379,24 +383,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/os/arch.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/os/interface.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/platformio.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -421,31 +411,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOSConfig_default.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/testIOExp.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/os/flags.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/tasks.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="2483" column="16" selection-start-line="2483" selection-start-column="16" selection-end-line="2483" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -497,16 +466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/peri/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#92#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/peri/ioexp.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -524,13 +483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOS.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="233" column="18" lean-forward="true" selection-start-line="233" selection-start-column="18" selection-end-line="233" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/queue.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2692">
@@ -545,33 +497,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/os/arch.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="87" lean-forward="true" selection-start-line="7" selection-start-column="87" selection-end-line="7" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/os/flags.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/os/arch.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        <state relative-caret-position="86">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="e#188#217#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+    <entry file="file://$PROJECT_DIR$/src/peri/pwm.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="264">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
-            <element signature="e#135#155#0" expanded="true" />
+            <element signature="e#92#117#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/tasks.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4254">
+          <caret line="2483" column="16" selection-start-line="2483" selection-start-column="16" selection-end-line="2483" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/platformio.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOS.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="712" column="36" lean-forward="true" selection-start-line="712" selection-start-column="36" selection-end-line="712" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOSConfig_default.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tasks.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+        <state relative-caret-position="299">
+          <caret line="62" column="25" lean-forward="true" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
           <folding>
             <element signature="e#135#155#0" expanded="true" />
-            <element signature="e#194#2320#0" />
+            <element signature="e#246#2372#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="e#135#155#0" expanded="true" />
           </folding>
         </state>
       </provider>

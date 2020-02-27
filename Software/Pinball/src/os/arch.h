@@ -13,7 +13,7 @@
 
 // Handy macros
 // do{..multiline statement}while(0) is a hack to make sure this works as single statement
-// for example below a if without {}
+// for example below an if without {}
 #define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
 #define PRINT_MILLIS            Serial.print("[");Serial.print(millis());Serial.print("] ");
 #define LOG(param)              do{PRINT_MILLIS PRINT_LINE Serial.println(param);}while(0)
