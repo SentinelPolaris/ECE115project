@@ -3,8 +3,8 @@
 //
 #pragma clang diagnostic ignored "-Wmissing-noreturn" // Disable clang inf loop warning
 
-#include "test/testIOExp.h"
+#include "test/testDC.h"
 
 int main() {
-    testIOInterrupt();
+    testDC();
 }

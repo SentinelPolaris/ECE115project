@@ -5,8 +5,8 @@
 #ifndef PINBALL_PWM_H
 #define PINBALL_PWM_H
 
-#include <Adafruit_PWMServoDriver.h>
 #include <os/interface.h>
+#include <Adafruit_PWMServoDriver.h>
 
 class PWM {
 public:
@@ -15,7 +15,6 @@ public:
         pwm.begin();  // NOTE: Assume default I2C bus on platform
         pwm.setOscillatorFrequency(27000000);  // The int.osc. is closer to 27MHz
         pwm.setPWMFreq(1600);  // This is the maximum PWM frequency
-        Wire.setClock(5000000);
         wireUnlock();
         stop();
     }
@@ -32,7 +31,9 @@ public:
         uint16_t endTime = (4095 * dutyCycle) / 100;
         wireLock();
         pwm.setPWM(port, 0, endTime);
+        LOG("Set");
         wireUnlock();
+        LOG("Done");
     }
 
 protected:
