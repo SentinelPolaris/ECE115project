@@ -16,19 +16,21 @@ extern volatile bool IO_IRQ_WAITING;
 extern void IOISR();
 
 inline void wireLock() {
-#if DEBUG==1
-    uint32_t wireLockWait = millis();
-#endif
-    while (WIRE_CURRENTLY_USED) {
-        ASSERT_WARN(wireLockWait - millis() < WIRE_LOCK_TIMEOUT_MS, "Wire Lock Is Taking Too Long!");
-        yd();
-    }
-    WIRE_CURRENTLY_USED = true;
+    taskENTER_CRITICAL();
+//#if DEBUG==1
+//    uint32_t wireLockWait = millis();
+//#endif
+//    while (WIRE_CURRENTLY_USED) {
+//        ASSERT_WARN(wireLockWait - millis() < WIRE_LOCK_TIMEOUT_MS, "Wire Lock Is Taking Too Long!");
+//        yd();
+//    }
+//    WIRE_CURRENTLY_USED = true;
 }
 
 inline void wireUnlock() {
-    ASSERT_FATAL(WIRE_CURRENTLY_USED, "Attempting to unlock an already unlocked wire bus!");
-    WIRE_CURRENTLY_USED = false;
+    taskEXIT_CRITICAL();
+//    ASSERT_FATAL(WIRE_CURRENTLY_USED, "Attempting to unlock an already unlocked wire bus!");
+//    WIRE_CURRENTLY_USED = false;
 }
 
 #endif //PINBALL_FLAGS_H

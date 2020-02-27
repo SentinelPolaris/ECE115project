@@ -7,8 +7,6 @@
 
 #include "flags.h"
 
-void wireInit();
-
 void serialInit();
 
 #endif //PINBALL_INTERFACE_H

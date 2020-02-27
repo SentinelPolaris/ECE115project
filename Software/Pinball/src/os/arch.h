@@ -6,7 +6,8 @@
 #define PINBALL_ARCH_H
 
 #include <Arduino.h>
-#include <TeensyThreads.h>
+//#include <TeensyThreads.h>
+#include <FreeRTOS_TEENSY4.h>
 #include <Wire.h>
 #include "config.h"
 
@@ -49,11 +50,11 @@ extern const uint8_t IRQ;
 
 // Arch Implement Specific Delays / Yields
 inline void dly(uint32_t ms) {
-    threads.delay(ms);
+    vTaskDelay((ms * configTICK_RATE_HZ) / 1000L);
 }
 
 inline void yd() {
-    threads.yield();
+    portYIELD()
 }
 
 

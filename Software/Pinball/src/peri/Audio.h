@@ -15,10 +15,11 @@
 #include <SD.h>
 #include <SerialFlash.h>
 
-class audio {
+class Audio {
 public:
-    audio();
+    Audio() = default;
 
+    void init();
     void play(const char *filename);
 
 protected:

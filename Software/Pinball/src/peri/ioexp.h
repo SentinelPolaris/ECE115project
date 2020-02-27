@@ -10,17 +10,21 @@
 
 class DIO {
 public:
-    DIO() {
-        wireLock();  // Locks wire interface
-//        pinMode(IRQ, INPUT_PULLUP);
-//        attachInterrupt(IRQ, IOISR, FALLING);
+    DIO() = default;
+
+    // NOTE: his function should be called in init only once. Doesn't take care of interrupt / Wire locks
+    void init() {
+        pinMode(IRQ, INPUT_PULLUP);
         mcp.begin();
         configureTb();
-//        mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
-
-//        configureIRGate(0);
-        wireUnlock();
         reset();
+    }
+
+    // NOTE: After this called, immediately ISR may be executed
+    void initIRQ() {
+//        mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
+//        configureIRGate(0);
+        attachInterrupt(IRQ, IOISR, FALLING);  // Put at the very last because ISR may be executed any time from now
     }
 
     void configureTb() {
