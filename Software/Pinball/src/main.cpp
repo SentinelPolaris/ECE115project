@@ -4,13 +4,14 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn" // Disable clang inf loop warning
 
 #include "os/arch.h"
-#include "peri/ioexp.h"
-#include "peri/pwm.h"
-#include "peri/Audio.h"
+#include "peri/peri.h"
 
-SemaphoreHandle_t sem;
 TaskHandle_t xHeartBeatTask = NULL, xIOTask = NULL, xIOUnstuckTask = NULL, xWheelTask = NULL, xSolenoidTask = NULL,
                 xScoreTask = NULL, xSpeakerTask = NULL;
+
+TaskHandle_t xPingTestTask = NULL, xPongTestTask = NULL;
+xQueueHandle IREventQueue = NULL;
+xQueueHandle testQueue = NULL;
 
 extern void vHeartBeatTask(void *arg);
 extern void vIOUnstuckTask(void *arg);
@@ -21,34 +22,39 @@ extern void vIOTask(void *arg);
 //extern void vScoreTask(void *arg);
 //extern void vSpeakerTask(void *arg);
 
+extern void vPingTestTask(void *arg);
+extern void vPongTestTask(void *arg);
 
-DIO ioexp;
-PWM motor;
-Audio speaker;
+peri teensyperi;
 
 int main() {
-    // MCU inits
+    // MCU init
     serialInit();
-    ioexp.init();
-    motor.init();
-    speaker.init();
+    teensyperi.ioexp.init();
+    teensyperi.motor.init();
+    teensyperi.speaker.init();
 
     // FREERTOS tasks
+    IREventQueue = xQueueCreate(20, sizeof(uint8_t));
+    testQueue = xQueueCreate(20, sizeof(uint8_t));
+
     portBASE_TYPE s1, s2, s3, s4, s5, s6, s7;
     s1 = xTaskCreate(vHeartBeatTask, "HeartBeat",          1024, NULL,              0, &xHeartBeatTask);
-    s2 = xTaskCreate(vIOUnstuckTask, "IOGuard",            1024, (void *) &ioexp,   0, &xIOUnstuckTask);
-//    s3 = xTaskCreate(vWheelTask,     "DCMotor",            1024, (void *) &motor,   1, &xWheelTask);
-//    s4 = xTaskCreate(vIOTask,        "IOEXP",              1024, (void *) &ioexp,   3, &xIOTask);
-//    s5 = xTaskCreate(vSolenoidTask,  "SolenoidController", 1024, (void *) &motor,   2, &xSolenoidTask);
-//    s6 = xTaskCreate(vScoreTask,     "Score",              1024, NULL,              2, &xScoreTask);
-//    s7 = xTaskCreate(vSpeakerTask,   "Speaker",            1024, (void *) &speaker, 2, &xSpeakerTask);
+    s2 = xTaskCreate(vIOUnstuckTask, "IOGuard",            1024, (void *) &teensyperi,   0, &xIOUnstuckTask);
+    s3 = xTaskCreate(vWheelTask,     "DCMotor",            1024, (void *) &teensyperi,   1, &xWheelTask);
+//    s4 = xTaskCreate(vIOTask,        "IOIntr",             1024, (void *) &teensyperi,   3, &xIOTask);
+//    s5 = xTaskCreate(vSolenoidTask,  "SoleCtrl",           1024, (void *) &teensyperi,   2, &xSolenoidTask);
+//    s6 = xTaskCreate(vScoreTask,     "Score",              1024, NULL,                   2, &xScoreTask);
+//    s7 = xTaskCreate(vSpeakerTask,   "Speaker",            1024, (void *) &teensyperi,   2, &xSpeakerTask);
+    xTaskCreate(vPingTestTask, "PingTest", 512, NULL, 0, &xPingTestTask);
+    xTaskCreate(vPongTestTask, "PongTest", 512, NULL, 0, &xPongTestTask);
 
     // Check for creation errors
-    if (sem == NULL || s1 != pdPASS || s2 != pdPASS){// || s3 != pdPASS || s4 != pdPASS) || s5 != pdPASS || s6 != pdPASS ||
+    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS){// || s4 != pdPASS) || s5 != pdPASS || s6 != pdPASS ||
 //        s7 != pdPASS) {
         LOGERROR("Tasks creation error!");
     }
-    LOG("Starting the scheduler !");
+    LOG("Starting the scheduler!");
     vTaskStartScheduler();
 
     // Should not reach here

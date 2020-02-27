@@ -57,6 +57,11 @@ inline void yd() {
     portYIELD()
 }
 
+// Convert ms to system ticks
+inline portTickType ms(uint32_t ms) {
+    return ((ms * configTICK_RATE_HZ) / 1000L);
+}
+
 
 //void __attribute__((__noreturn__)) os_panic(void) {
 //    LOGERROR("Panic handler called from 0x%08x !!!", __builtin_return_address(0));

@@ -14,6 +14,7 @@ public:
 
     // NOTE: his function should be called in init only once. Doesn't take care of interrupt / Wire locks
     void init() {
+        LOG("Initializing IO Expander");
         pinMode(IRQ, INPUT_PULLUP);
         mcp.begin();
         configureTb();

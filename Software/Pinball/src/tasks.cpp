@@ -4,9 +4,10 @@
 #pragma clang diagnostic ignored "-Wmissing-noreturn" // Disable clang inf loop warning
 
 #include "os/arch.h"
-#include "peri/ioexp.h"
-#include "peri/pwm.h"
-#include "peri/Audio.h"
+#include "peri/peri.h"
+
+extern xQueueHandle IREventQueue;
+extern xQueueHandle testQueue;
 
 void get_task_state() {
     // Credit: https://blog.csdn.net/zhzht19861011/article/details/50717549?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
@@ -62,30 +63,75 @@ void get_task_state() {
 void vHeartBeatTask(void *arg) {
     for(;;) {
         get_task_state();
-//        char buf[1000];
-//        LOG(buf);
-        dly(200);
+        dly(5000);
     }
 }
 
 void vIOUnstuckTask(void* arg) {
-    DIO ioexp = *((DIO *)arg);
+    DIO ioexp = (*((peri *)arg)).ioexp;
     for(;;){
-//        ioexp.clearInterrupt();
+        ioexp.clearInterrupt();
         dly(500);
     }
 }
 
 void vIOTask(void* arg) {
-    DIO ioexp = *((DIO *) arg);
+    DIO ioexp = (*((peri *)arg)).ioexp;
+    ioexp.initIRQ();  // NOTE: Delayed init interrupt here because ISR is only safe after this task has been started
     for(;;) {
         // Block task while waiting for notification from ISR.
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        ioexp.IOIRQHandler();
+        uint16_t irqInfo = ioexp.IOIRQHandler();
+        uint8_t irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
+        uint8_t irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
+        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin. Full?");
+        }
     }
 }
 
 void vWheelTask(void* arg) {
-    PWM motor = *((PWM *) arg);
-    // FIXME Not Implemented
+    PWM motor = (*((peri *)arg)).motor;
+    DIO ioexp = (*((peri *)arg)).ioexp;
+    for(;;) {
+        ioexp.setTBDirection(true);
+        dly(1000);
+        ioexp.setTBDirection(false);
+        dly(1000);
+    }
+}
+
+void vScoreTask(void* arg) {
+    uint8_t *irPin;
+    for(;;) {
+        if(xQueueReceive(IREventQueue, irPin, portMAX_DELAY)) {
+            LOGA("ScoreTask Received from Queue:");
+            PRINTLN(*irPin);
+            // TODO: Talk to Arduino
+        } else
+            LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
+    }
+}
+void vPingTestTask(void* arg) {
+    uint8_t irqPin = 5;
+    for(;;) {
+        irqPin++;
+        LOG("Sending on queue");
+        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin. Full?");
+        }
+        dly(200);
+    }
+}
+
+void vPongTestTask(void* arg) {
+    uint8_t *irPin;
+    for(;;) {
+        if(xQueueReceive(testQueue, irPin, portMAX_DELAY)) {
+            LOGA("ScoreTask Received from Queue:");
+            PRINTLN(*irPin);
+            // TODO: Talk to Arduino
+        } else
+            LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
+    }
 }
