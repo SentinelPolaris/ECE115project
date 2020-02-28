@@ -8,6 +8,8 @@
 
 extern xQueueHandle IREventQueue;
 extern xQueueHandle testQueue;
+extern xQueueHandle speakerQueue;
+extern xQueueHandle solenoidQueue;
 
 void get_task_state() {
     // Credit: https://blog.csdn.net/zhzht19861011/article/details/50717549?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
@@ -87,12 +89,39 @@ void vIOTask(void* arg) {
     for(;;) {
         // Block task while waiting for notification from ISR.
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        uint16_t irqInfo = ioexp.IOIRQHandler();
-        uint8_t irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
-        uint8_t irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
-        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin. Full?");
+        uint16_t irqInfo;
+        uint8_t irqPin, irqVal;
+        // FIXME: For now disabled critical section. Sometime freezes and that may be because of this
+//        wireLock();
+        irqInfo = ioexp.readInterruptPin();
+        irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
+        irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
+        if(irqPin == 255) {
+            LOGWARNING("Skipped 255 pin in IRQ Task!");
+//            wireUnlock();
+            continue;
         }
+        // Send IRQ Pin right away, but still continue SW debounce process
+        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
+        }
+        if(xQueueSend(speakerQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to speakerQueue. Full?");
+        }
+        if(xQueueSend(solenoidQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
+        }
+#if IOIRQ_SW_DEBOUNCE == 1
+        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
+#endif
+        // CRITICAL: Wait for interrupt signal to go back (so IRQ goes back again)
+        // Since IRQ will follow interrupt signal for MCP23017
+        while (ioexp.read(irqPin) == irqVal) { yd(); }
+#if IOIRQ_SW_DEBOUNCE == 1
+        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
+#endif
+//        IO_IRQ_WAITING = false;
+//        wireUnlock();
     }
 }
 
@@ -100,8 +129,12 @@ void vWheelTask(void* arg) {
     PWM motor = (*((peri *)arg)).motor;
     DIO ioexp = (*((peri *)arg)).ioexp;
     for(;;) {
+        motor.set(0, 50);
+        motor.set(1, 100);
         ioexp.setTBDirection(true);
         dly(1000);
+        motor.set(0, 100);
+        motor.set(1, 50);
         ioexp.setTBDirection(false);
         dly(1000);
     }
@@ -118,6 +151,40 @@ void vScoreTask(void* arg) {
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
     }
 }
+
+
+void vSpeakerTask(void *arg) {
+    Audio speaker = (*((peri *) arg)).speaker;
+#define IR_TRG_PINS_AMOUNT 3
+    String music[IR_TRG_PINS_AMOUNT] = {
+            "0.wav",
+            "1.wav",
+            "2.wav"
+    };
+    uint8_t *irPin;
+    for (;;) {
+        if (xQueueReceive(speakerQueue, irPin, portMAX_DELAY)) {
+            LOGA("Now playing: ");
+            PRINTLN(music[*irPin].c_str());
+//            speaker.play(music[*irPin].c_str());
+        } else
+            LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
+    }
+}
+
+void vSolenoidTask(void* arg) {
+    PWM motor = (*((peri *)arg)).motor;
+    uint8_t *irPin;
+    for (;;) {
+        if (xQueueReceive(solenoidQueue, irPin, portMAX_DELAY)) {
+            LOGA("Solenoid Queue RX:");
+            PRINTLN(*irPin);
+            // TODO: Implement PWM
+        } else
+            LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
+    }
+}
+
 void vPingTestTask(void* arg) {
     uint8_t irqPin = 5;
     for(;;) {
@@ -139,5 +206,13 @@ void vPongTestTask(void* arg) {
             // TODO: Talk to Arduino
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
+    }
+}
+
+void vTestISRTask(void *arg) {
+    DIO ioexp = (*((peri *)arg)).ioexp;
+    for(;;) {
+        LOG(ioexp.read(0));
+        dly(500);
     }
 }

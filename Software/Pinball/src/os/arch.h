@@ -20,6 +20,7 @@
 #define LOGA(param)             do{PRINT_MILLIS PRINT_LINE Serial.print(param);}while(0)
 #define LOGERROR(param)         do{Serial.print("[ERROR]@"); LOG(param);}while(0)
 #define LOGWARNING(param)       do{Serial.print("[WARN]@"); LOG(param);}while(0)
+#define LOGWARNINGA(param)      do{Serial.print("[WARN]@"); LOGA(param);}while(0)
 #define PRINT(msg)              Serial.print(msg)
 #define PRINTLN(msg)            Serial.println(msg)
 #define TIMER_START             __timer_temp = micros();

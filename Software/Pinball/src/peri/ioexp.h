@@ -86,7 +86,7 @@ public:
         uint8_t pin = mcp.getLastInterruptPin();
         if (pin != 255u) {
             uint8_t val = mcp.getLastInterruptPinValue();
-            LOGWARNING("Manually Cleared an existing Interrupt@");
+            LOGWARNINGA("Manually Cleared an existing Interrupt@");
             PRINT(pin);
             PRINT(":");
             PRINTLN(val);
@@ -95,28 +95,6 @@ public:
         mcp.getLastInterruptPinValue();
 #endif
         wireUnlock();
-    }
-
-    uint16_t IOIRQHandler() {
-        // NOTE: Caller don't worry about locking
-        uint16_t irqInfo;
-        uint8_t irqPin, irqVal;
-        wireLock();
-        irqInfo = readInterruptPin();
-        irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
-        irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
-#if IOIRQ_SW_DEBOUNCE == 1
-        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
-#endif
-        // CRITICAL: Wait for interrupt signal to go back (so IRQ goes back again)
-        // Since IRQ will follow interrupt signal for MCP23017
-        while (read(irqPin) == irqVal) { yd(); }
-#if IOIRQ_SW_DEBOUNCE == 1
-        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
-#endif
-        IO_IRQ_WAITING = false;
-        wireUnlock();
-        return irqInfo;
     }
 
 protected:
