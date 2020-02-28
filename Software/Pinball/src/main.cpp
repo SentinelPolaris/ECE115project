@@ -14,7 +14,6 @@ xQueueHandle IREventQueue = NULL;
 xQueueHandle testQueue = NULL;
 xQueueHandle speakerQueue = NULL;
 xQueueHandle solenoidQueue = NULL;
-
 extern void vHeartBeatTask(void *arg);
 extern void vIOUnstuckTask(void *arg);
 extern void vWheelTask(void *arg);
@@ -32,10 +31,14 @@ peri teensyperi;
 
 int main() {
     // MCU init
-    serialInit();
+    Serial.begin(115200);
     teensyperi.ioexp.init();
     teensyperi.motor.init();
     teensyperi.speaker.init();
+
+    teensyperi.Arduino.begin(9600);
+    teensyperi.ESP.begin(9600);
+    teensyperi.audioTeensy.begin(9600);
 
     // FREERTOS tasks
     IREventQueue = xQueueCreate(20, sizeof(uint8_t));
@@ -58,8 +61,8 @@ int main() {
 //    xTaskCreate(vTestISRTask, "ISRTest", 512, (void *) &teensyperi, 0, &xTestISRTask);
 
     // Check for creation errors
-    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS || s4 != pdPASS){ //|| s5 != pdPASS || s6 != pdPASS ||
-//        s7 != pdPASS) {
+    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS || s4 != pdPASS || s5 != pdPASS || s6 != pdPASS ||
+        s7 != pdPASS) {
         LOGERROR("Tasks creation error!");
     }
     LOG("Starting the scheduler!");

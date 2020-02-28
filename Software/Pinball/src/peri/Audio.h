@@ -8,7 +8,7 @@
 #define SDCARD_MOSI_PIN  7
 #define SDCARD_SCK_PIN   14
 
-#include "../os/flags.h"
+#include "os/interface.h"
 #include <Audio.h>
 #include <Wire.h>
 #include <SPI.h>
@@ -21,12 +21,15 @@ public:
 
     void init();
     void play(const char *filename);
+    void playFile(const char *filename);
 
 protected:
     bool disabled = false;
     AudioPlaySdWav playWav1;
     AudioOutputI2S audioOutput;
     AudioControlSGTL5000 sgtl5000_1;
+    AudioConnection *patchCord1;
+    AudioConnection *patchCord2;
 };
 
 
