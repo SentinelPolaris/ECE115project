@@ -63,14 +63,10 @@ void get_task_state() {
 }
 
 void vHeartBeatTask(void *arg) {
-//    char buf[200];
     for(;;) {
+        // FIXME: Currently enabled timer for CPU % Counting
+        //  This will disable PWM functionality. See https://github.com/discord-intech/FreeRTOS-Teensy4/issues/3
         get_task_state();
-//        // vTaskGetRunTimeStats kinda broken
-//        // https://www.freertos.org/rtos-run-time-stats.html
-//        // https://github.com/discord-intech/FreeRTOS-Teensy4/issues/3
-//        vTaskGetRunTimeStats(buf);
-//        LOG(buf);
         dly(5000);
     }
 }
