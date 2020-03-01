@@ -50,11 +50,16 @@ void loop();
 extern const uint8_t IRQ;
 
 // Arch Implement Specific Delays / Yields
+// MCU Arch Delay
 inline void dly(uint32_t ms) {
+    delay(ms);
+}
+// RTOS Delay
+inline void vDelay(uint32_t ms) {
     vTaskDelay((ms * configTICK_RATE_HZ) / 1000L);
 }
-
-inline void yd() {
+// RTOS Yield (force switching context)
+inline void vYield() {
     portYIELD()
 }
 

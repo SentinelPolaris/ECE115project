@@ -22,7 +22,7 @@ inline void wireLock() {
 //#endif
 //    while (WIRE_CURRENTLY_USED) {
 //        ASSERT_WARN(wireLockWait - millis() < WIRE_LOCK_TIMEOUT_MS, "Wire Lock Is Taking Too Long!");
-//        yd();
+//        vYield();
 //    }
 //    WIRE_CURRENTLY_USED = true;
 }

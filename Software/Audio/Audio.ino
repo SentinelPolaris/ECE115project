@@ -1,3 +1,7 @@
+// NOTE ON WAV FILE CONVERSION
+// https://audio.online-convert.com/convert-to-wav
+// Set bit rate resolution: 16Bit, sampling rate: 44100 Hz, audio channels: mono
+
 // Simple WAV file player example
 //
 // Three types of output may be used, by configuring the code below.
@@ -31,7 +35,6 @@
 #include <SD.h>
 #include <SerialFlash.h>
 #define HWSERIAL Serial4
-#include <SoftwareSerial.h>
 
 
 AudioPlaySdWav           playWav1;
@@ -111,19 +114,23 @@ void loop() {
   char incomingByte;
 
   if (HWSERIAL.available() > 0) {
-    incomingByte = Serial.read();
-    Serial.println((int)incomingByte);
-    if (incomingByte == 0) {
-      playFile("SDTEST1.WAV");  // filenames are always uppercase 8.3 format
-    }
-    else if (incomingByte == 1) {
-      playFile("SDTEST2.WAV");
-    }
-    else if (incomingByte == 2) {
-      playFile("SDTEST3.WAV");
-    }
-    else if (incomingByte == 3) {
-      playFile("SDTEST4.WAV");
-    }
+    incomingByte = HWSERIAL.read();
+    char filename[20];
+    sprintf(filename, "%d.wav", incomingByte);
+    Serial.println(filename);
+    playFile(filename);
+    //    Serial.println(filename.c_str());
+    //    if (incomingByte == 0) {
+    //      playFile("SDTEST1.WAV");  // filenames are always uppercase 8.3 format
+    //    }
+    //    else if (incomingByte == 1) {
+    //      playFile("SDTEST2.WAV");
+    //    }
+    //    else if (incomingByte == 2) {
+    //      playFile("SDTEST3.WAV");
+    //    }
+    //    else if (incomingByte == 3) {
+    //      playFile("SDTEST4.WAV");
+    //    }
   }
 }

@@ -67,7 +67,7 @@ void vHeartBeatTask(void *arg) {
         // FIXME: Currently enabled timer for CPU % Counting
         //  This will disable PWM functionality. See https://github.com/discord-intech/FreeRTOS-Teensy4/issues/3
         get_task_state();
-        dly(5000);
+        vDelay(5000);
     }
 }
 
@@ -75,7 +75,7 @@ void vIOUnstuckTask(void* arg) {
     DIO ioexp = (*((peri *)arg)).ioexp;
     for(;;){
         ioexp.clearInterrupt();
-        dly(500);
+        vDelay(500);
     }
 }
 
@@ -108,13 +108,13 @@ void vIOTask(void* arg) {
             LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
         }
 #if IOIRQ_SW_DEBOUNCE == 1
-        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
+        vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
 #endif
         // CRITICAL: Wait for interrupt signal to go back (so IRQ goes back again)
         // Since IRQ will follow interrupt signal for MCP23017
-        while (ioexp.read(irqPin) == irqVal) { yd(); }
+        while (ioexp.read(irqPin) == irqVal) { vYield(); }
 #if IOIRQ_SW_DEBOUNCE == 1
-        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
+        vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
 #endif
 //        IO_IRQ_WAITING = false;
 //        wireUnlock();
@@ -124,15 +124,16 @@ void vIOTask(void* arg) {
 void vWheelTask(void* arg) {
     PWM motor = (*((peri *)arg)).motor;
     DIO ioexp = (*((peri *)arg)).ioexp;
+    ioexp.setTBDirection(true);
     for(;;) {
         motor.set(0, 50);
         motor.set(1, 100);
         ioexp.setTBDirection(true);
-        dly(1000);
+        vDelay(1000);
         motor.set(0, 100);
         motor.set(1, 50);
         ioexp.setTBDirection(false);
-        dly(1000);
+        vDelay(1000);
     }
 }
 
@@ -150,32 +151,30 @@ void vScoreTask(void* arg) {
 
 
 void vSpeakerTask(void *arg) {
-    Audio speaker = (*((peri *) arg)).speaker;
-#define IR_TRG_PINS_AMOUNT 3
-    String music[IR_TRG_PINS_AMOUNT] = {
-            "0.wav",
-            "1.wav",
-            "2.wav"
-    };
     uint8_t *irPin;
     for (;;) {
         if (xQueueReceive(speakerQueue, irPin, portMAX_DELAY)) {
             LOGA("Now playing: ");
-            PRINTLN(music[*irPin].c_str());
-//            speaker.play(music[*irPin].c_str());
+            PRINT((int)IR2WAV[*irPin]);
+            PRINTLN(".wav");
+            SPEAKER_TEENSY.print(IR2WAV[*irPin]);
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
     }
 }
 
 void vSolenoidTask(void* arg) {
+    // NOTE: Assumes vWheelTask already sets TB input to either H/L or LH for this output port
     PWM motor = (*((peri *)arg)).motor;
     uint8_t *irPin;
     for (;;) {
         if (xQueueReceive(solenoidQueue, irPin, portMAX_DELAY)) {
             LOGA("Solenoid Queue RX:");
             PRINTLN(*irPin);
-            // TODO: Implement PWM
+            // Send pulse to solenoid
+            motor.set(2, 100);
+            vDelay(100);
+            motor.set(2, 0);
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
     }
@@ -189,7 +188,7 @@ void vPingTestTask(void* arg) {
         if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {
             LOGWARNING("Failed to enqueue IRQ Pin. Full?");
         }
-        dly(200);
+        vDelay(200);
     }
 }
 
@@ -209,6 +208,7 @@ void vTestISRTask(void *arg) {
     DIO ioexp = (*((peri *)arg)).ioexp;
     for(;;) {
         LOG(ioexp.read(0));
-        dly(500);
+        Serial4.println("Hello");
+        vDelay(500);
     }
 }

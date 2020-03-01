@@ -25,7 +25,7 @@ void Audio::play(const char *filename) {
 //        wireLock();
         LOG("Playing now");
         LOG(playWav1.play(filename));
-        dly(5);
+        vDelay(5);
 //        wireUnlock();
     }
 }

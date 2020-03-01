@@ -34,11 +34,10 @@ int main() {
     Serial.begin(115200);
     teensyperi.ioexp.init();
     teensyperi.motor.init();
-    teensyperi.speaker.init();
+    RGB_PANEL.begin(9600);
+    ESP.begin(9600);
+    SPEAKER_TEENSY.begin(9600);
 
-    teensyperi.Arduino.begin(9600);
-    teensyperi.ESP.begin(9600);
-    teensyperi.audioTeensy.begin(9600);
 
     // FREERTOS tasks
     IREventQueue = xQueueCreate(20, sizeof(uint8_t));
