@@ -6,19 +6,21 @@
 #define PINBALL_ARCH_H
 
 #include <Arduino.h>
-#include <TeensyThreads.h>
+//#include <TeensyThreads.h>
+#include <FreeRTOS_TEENSY4.h>
 #include <Wire.h>
 #include "config.h"
 
 // Handy macros
 // do{..multiline statement}while(0) is a hack to make sure this works as single statement
-// for example below a if without {}
+// for example below an if without {}
 #define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
 #define PRINT_MILLIS            Serial.print("[");Serial.print(millis());Serial.print("] ");
 #define LOG(param)              do{PRINT_MILLIS PRINT_LINE Serial.println(param);}while(0)
 #define LOGA(param)             do{PRINT_MILLIS PRINT_LINE Serial.print(param);}while(0)
 #define LOGERROR(param)         do{Serial.print("[ERROR]@"); LOG(param);}while(0)
 #define LOGWARNING(param)       do{Serial.print("[WARN]@"); LOG(param);}while(0)
+#define LOGWARNINGA(param)      do{Serial.print("[WARN]@"); LOGA(param);}while(0)
 #define PRINT(msg)              Serial.print(msg)
 #define PRINTLN(msg)            Serial.println(msg)
 #define TIMER_START             __timer_temp = micros();
@@ -48,12 +50,22 @@ void loop();
 extern const uint8_t IRQ;
 
 // Arch Implement Specific Delays / Yields
+// MCU Arch Delay
 inline void dly(uint32_t ms) {
-    threads.delay(ms);
+    delay(ms);
+}
+// RTOS Delay
+inline void vDelay(uint32_t ms) {
+    vTaskDelay((ms * configTICK_RATE_HZ) / 1000L);
+}
+// RTOS Yield (force switching context)
+inline void vYield() {
+    portYIELD()
 }
 
-inline void yd() {
-    threads.yield();
+// Convert ms to system ticks
+inline portTickType ms(uint32_t ms) {
+    return ((ms * configTICK_RATE_HZ) / 1000L);
 }
 
 

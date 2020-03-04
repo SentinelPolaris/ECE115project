@@ -10,12 +10,13 @@
 
 class PWM {
 public:
-    PWM() {
-        wireLock();  // Locks wire interface
+    PWM() = default;
+
+    void init() {
+        LOG("Initializing PWM");
         pwm.begin();  // NOTE: Assume default I2C bus on platform
         pwm.setOscillatorFrequency(27000000);  // The int.osc. is closer to 27MHz
         pwm.setPWMFreq(1600);  // This is the maximum PWM frequency
-        wireUnlock();
         stop();
     }
 
@@ -31,9 +32,7 @@ public:
         uint16_t endTime = (4095 * dutyCycle) / 100;
         wireLock();
         pwm.setPWM(port, 0, endTime);
-        LOG("Set");
         wireUnlock();
-        LOG("Done");
     }
 
 protected:

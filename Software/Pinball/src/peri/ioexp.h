@@ -10,20 +10,31 @@
 
 class DIO {
 public:
-    DIO() {
-        wireLock();  // Locks wire interface
-//        pinMode(IRQ, INPUT_PULLUP);
-//        attachInterrupt(IRQ, IOISR, FALLING);
+    DIO() = default;
+
+    // NOTE: his function should be called in init only once. Doesn't take care of interrupt / Wire locks
+    void init() {
+        LOG("Initializing IO Expander");
+        pinMode(IRQ, INPUT_PULLUP);
         mcp.begin();
         configureTb();
-//        mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
-
-//        configureIRGate(0);
-        wireUnlock();
         reset();
     }
 
+    // NOTE: After this called, immediately ISR may be executed
+    void initIRQ() {
+        mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
+        // TODO: Add more IR definitions
+        configureIRGate(IOEXP_SOLENOID_PIN);
+        configureIRGate(IOEXP_TOP1_PIN);
+        configureIRGate(IOEXP_TOP2_PIN);
+        configureIRGate(IOEXP_SLIDE_PIN);
+        attachInterrupt(IRQ, IOISR, FALLING);  // Put at the very last because ISR may be executed any time from now
+    }
+
     void configureTb() {
+//        mcp.pinMode(2, OUTPUT);
+//        mcp.pinMode(3, OUTPUT);
         mcp.pinMode(4, OUTPUT);
         mcp.pinMode(5, OUTPUT);
         mcp.pinMode(6, OUTPUT);
@@ -32,12 +43,16 @@ public:
 
     void setTBDirection(bool cw) {
         if(cw) {
+//            write(2, LOW);
+//            write(3, LOW);
             write(4, LOW);
             write(5, HIGH);
             write(6, LOW);
             write(7, HIGH);
         }
         else {
+//            write(2, HIGH);
+//            write(3, LOW);
             write(4, HIGH);
             write(5, LOW);
             write(6, HIGH);
@@ -81,7 +96,7 @@ public:
         uint8_t pin = mcp.getLastInterruptPin();
         if (pin != 255u) {
             uint8_t val = mcp.getLastInterruptPinValue();
-            LOGWARNING("Manually Cleared an existing Interrupt@");
+            LOGWARNINGA("Manually Cleared an existing Interrupt@");
             PRINT(pin);
             PRINT(":");
             PRINTLN(val);
@@ -90,28 +105,6 @@ public:
         mcp.getLastInterruptPinValue();
 #endif
         wireUnlock();
-    }
-
-    uint16_t IOIRQHandler() {
-        // NOTE: Caller don't worry about locking
-        uint16_t irqInfo;
-        uint8_t irqPin, irqVal;
-        wireLock();
-        irqInfo = readInterruptPin();
-        irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
-        irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
-#if IOIRQ_SW_DEBOUNCE == 1
-        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
-#endif
-        // CRITICAL: Wait for interrupt signal to go back (so IRQ goes back again)
-        // Since IRQ will follow interrupt signal for MCP23017
-        while (read(irqPin) == irqVal) { yd(); }
-#if IOIRQ_SW_DEBOUNCE == 1
-        dly(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
-#endif
-        IO_IRQ_WAITING = false;
-        wireUnlock();
-        return irqInfo;
     }
 
 protected:
