@@ -50,7 +50,7 @@ int main() {
     s2 = xTaskCreate(vIOUnstuckTask, "IOGuard",            1024, (void *) &teensyperi,   0, &xIOUnstuckTask);
     s3 = xTaskCreate(vWheelTask,     "DCMotor",            1024, (void *) &teensyperi,   1, &xWheelTask);
     s4 = xTaskCreate(vIOTask,        "IOIntr",             1024, (void *) &teensyperi,   3, &xIOTask);
-    s5 = xTaskCreate(vSolenoidTask,  "SoleCtrl",           1024, (void *) &teensyperi,   2, &xSolenoidTask);
+    s5 = xTaskCreate(vSolenoidTask,  "SoleCtrl",           1024, (void *) &teensyperi,   4, &xSolenoidTask);
     s6 = xTaskCreate(vScoreTask,     "Score",              1024, (void *) &teensyperi,   2, &xScoreTask);
     s7 = xTaskCreate(vSpeakerTask,   "Speaker",            1024, (void *) &teensyperi,   2, &xSpeakerTask);
 

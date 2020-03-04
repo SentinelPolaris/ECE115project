@@ -67,7 +67,7 @@ void vHeartBeatTask(void *arg) {
         // FIXME: Currently enabled timer for CPU % Counting
         //  This will disable PWM functionality. See https://github.com/discord-intech/FreeRTOS-Teensy4/issues/3
         get_task_state();
-        vDelay(5000);
+        vDelay(1000);
     }
 }
 
@@ -80,11 +80,13 @@ void vIOUnstuckTask(void* arg) {
 }
 
 void vIOTask(void* arg) {
+    LOG("Init IO");
     DIO ioexp = (*((peri *)arg)).ioexp;
     ioexp.initIRQ();  // NOTE: Delayed init interrupt here because ISR is only safe after this task has been started
     for(;;) {
         // Block task while waiting for notification from ISR.
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        LOG("IRQ Notification RX!");
         uint16_t irqInfo;
         uint8_t irqPin, irqVal;
         // FIXME: For now disabled critical section. Sometime freezes and that may be because of this
@@ -98,14 +100,18 @@ void vIOTask(void* arg) {
             continue;
         }
         // Send IRQ Pin right away, but still continue SW debounce process
-        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
-        }
+        // Send to speaker and IREvent(score/graphics) anyways
         if(xQueueSend(speakerQueue, (void *)&irqPin, ms(1)) != pdPASS) {
             LOGWARNING("Failed to enqueue IRQ Pin to speakerQueue. Full?");
         }
-        if(xQueueSend(solenoidQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
+        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
+        }
+        // Send to solenoid only if it's solenoid
+        if(irqPin == IOEXP_SOLENOID_PIN) {
+            if (xQueueSend(solenoidQueue, (void *) &irqPin, ms(1)) != pdPASS) {
+                LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
+            }
         }
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
@@ -143,7 +149,7 @@ void vScoreTask(void* arg) {
         if(xQueueReceive(IREventQueue, irPin, portMAX_DELAY)) {
             LOGA("ScoreTask Received from Queue:");
             PRINTLN(*irPin);
-            // TODO: Talk to Arduino
+            RGB_PANEL.print((char)*irPin);
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
     }
@@ -171,9 +177,12 @@ void vSolenoidTask(void* arg) {
         if (xQueueReceive(solenoidQueue, irPin, portMAX_DELAY)) {
             LOGA("Solenoid Queue RX:");
             PRINTLN(*irPin);
+            // FIXME: Without this delay it sometimes hang the system... (I2C conflict with debouncing?)
+            //        Add another callback for here to temporarily disable debouncing until soldnoid shoots out again
+            vDelay(1000);
             // Send pulse to solenoid
             motor.set(2, 100);
-            vDelay(100);
+            vDelay(500);
             motor.set(2, 0);
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");

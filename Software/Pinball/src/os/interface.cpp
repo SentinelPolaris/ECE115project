@@ -15,7 +15,6 @@ volatile bool IO_IRQ_WAITING = false;
 extern TaskHandle_t xIOTask;
 
 void IOISR() {
-
     BaseType_t xHigherPriorityTaskWoken;
     // Init xHigherPriorityTaskWoken to pdFALSE. If vTaskNotifyGiveFromISR() clears Block on vIOTask,
     // and vIOTask's priority > currently running task, xHigherPriorityTaskWoken will be set to pdTRUE

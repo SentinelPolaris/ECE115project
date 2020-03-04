@@ -25,13 +25,16 @@ public:
     void initIRQ() {
         mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
         // TODO: Add more IR definitions
-        configureIRGate(1);
+        configureIRGate(IOEXP_SOLENOID_PIN);
+        configureIRGate(IOEXP_TOP1_PIN);
+        configureIRGate(IOEXP_TOP2_PIN);
+        configureIRGate(IOEXP_SLIDE_PIN);
         attachInterrupt(IRQ, IOISR, FALLING);  // Put at the very last because ISR may be executed any time from now
     }
 
     void configureTb() {
-        mcp.pinMode(2, OUTPUT);
-        mcp.pinMode(3, OUTPUT);
+//        mcp.pinMode(2, OUTPUT);
+//        mcp.pinMode(3, OUTPUT);
         mcp.pinMode(4, OUTPUT);
         mcp.pinMode(5, OUTPUT);
         mcp.pinMode(6, OUTPUT);
@@ -40,16 +43,16 @@ public:
 
     void setTBDirection(bool cw) {
         if(cw) {
-            write(2, LOW);
-            write(3, LOW);
+//            write(2, LOW);
+//            write(3, LOW);
             write(4, LOW);
             write(5, HIGH);
             write(6, LOW);
             write(7, HIGH);
         }
         else {
-            write(2, HIGH);
-            write(3, LOW);
+//            write(2, HIGH);
+//            write(3, LOW);
             write(4, HIGH);
             write(5, LOW);
             write(6, HIGH);
