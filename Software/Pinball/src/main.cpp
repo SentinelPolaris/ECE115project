@@ -30,6 +30,10 @@ extern void vTestISRTask(void *arg);
 peri teensyperi;
 
 int main() {
+    pinMode(9, OUTPUT);
+    pinMode(10, OUTPUT);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
     // MCU init
     Serial.begin(115200);
     teensyperi.ioexp.init();

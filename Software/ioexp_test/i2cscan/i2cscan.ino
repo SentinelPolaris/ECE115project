@@ -32,6 +32,11 @@
 
 void setup()
 {
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  digitalWrite(9, HIGH);
+  digitalWrite(10, HIGH);
+
   Wire.begin();
 
   Serial.begin(9600);
