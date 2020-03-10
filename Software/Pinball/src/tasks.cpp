@@ -3,14 +3,15 @@
 //
 #pragma clang diagnostic ignored "-Wmissing-noreturn" // Disable clang inf loop warning
 
-#include "os/arch.h"
+#include "os/interface.h"
 #include "peri/peri.h"
 
 extern xQueueHandle IREventQueue;
 extern xQueueHandle testQueue;
 extern xQueueHandle speakerQueue;
 extern xQueueHandle solenoidQueue;
-
+volatile bool ISRHandled = true;
+volatile uint32_t lastSolenoidTriggered = millis();
 void get_task_state() {
     // Credit: https://blog.csdn.net/zhzht19861011/article/details/50717549?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
 #define MAX_TASK_NUM 30
@@ -67,7 +68,7 @@ void vHeartBeatTask(void *arg) {
         // FIXME: Currently enabled timer for CPU % Counting
         //  This will disable PWM functionality. See https://github.com/discord-intech/FreeRTOS-Teensy4/issues/3
         get_task_state();
-        vDelay(1000);
+        vDelay(5000);
     }
 }
 
@@ -94,6 +95,7 @@ void vIOTask(void* arg) {
         irqInfo = ioexp.readInterruptPin();
         irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
         irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
+        LOG(irqPin);
         if(irqPin == 255) {
             LOGWARNING("Skipped 255 pin in IRQ Task!");
 //            wireUnlock();
@@ -109,19 +111,29 @@ void vIOTask(void* arg) {
         }
         // Send to solenoid only if it's solenoid
         if(irqPin == IOEXP_SOLENOID_PIN) {
+            if (millis() - lastSolenoidTriggered < 2000) {
+                LOG("Last Solenoid Triggered too close. Skipped!");
+                ISRHandled = true;
+                continue;
+            }
+            lastSolenoidTriggered = millis();
+            LOG("Send Solenoid!");
             if (xQueueSend(solenoidQueue, (void *) &irqPin, ms(1)) != pdPASS) {
                 LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
             }
         }
+        LOG("Starting debounce");
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
 #endif
         // CRITICAL: Wait for interrupt signal to go back (so IRQ goes back again)
         // Since IRQ will follow interrupt signal for MCP23017
-        while (ioexp.read(irqPin) == irqVal) { vYield(); }
+        while (ioexp.read(irqPin) == irqVal) { vDelay(50); }
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
 #endif
+        LOG("Debounce Done");
+        ISRHandled = true;
 //        IO_IRQ_WAITING = false;
 //        wireUnlock();
     }
@@ -132,13 +144,17 @@ void vWheelTask(void* arg) {
     DIO ioexp = (*((peri *)arg)).ioexp;
     ioexp.setTBDirection(true);
     for(;;) {
+//        taskENTER_CRITICAL();
         motor.set(0, 50);
         motor.set(1, 100);
         ioexp.setTBDirection(true);
+//        taskEXIT_CRITICAL();
         vDelay(1000);
+//        taskENTER_CRITICAL();
         motor.set(0, 100);
         motor.set(1, 50);
         ioexp.setTBDirection(false);
+//        taskEXIT_CRITICAL();
         vDelay(1000);
     }
 }
@@ -184,20 +200,25 @@ void vSolenoidTask(void* arg) {
             motor.set(2, 100);
             vDelay(500);
             motor.set(2, 0);
+            vDelay(500);
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
     }
 }
 
 void vPingTestTask(void* arg) {
-    uint8_t irqPin = 5;
+//    uint8_t irqPin = 5;
     for(;;) {
-        irqPin++;
-        LOG("Sending on queue");
-        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin. Full?");
+        if(ESP.available()) {
+            ESP.print(ESP.read());
         }
-        vDelay(200);
+        vDelay(100);
+//        irqPin++;
+//        LOG("Sending on queue");
+//        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+//            LOGWARNING("Failed to enqueue IRQ Pin. Full?");
+//        }
+//        vDelay(200);
     }
 }
 

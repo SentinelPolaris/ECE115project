@@ -13,18 +13,22 @@ volatile bool IO_IRQ_WAITING = false;
  */
 
 extern TaskHandle_t xIOTask;
+extern volatile bool ISRHandled;
 
 void IOISR() {
-    BaseType_t xHigherPriorityTaskWoken;
-    // Init xHigherPriorityTaskWoken to pdFALSE. If vTaskNotifyGiveFromISR() clears Block on vIOTask,
-    // and vIOTask's priority > currently running task, xHigherPriorityTaskWoken will be set to pdTRUE
-    xHigherPriorityTaskWoken = pdFALSE;
+    if(ISRHandled) {
+        ISRHandled = false;
+        BaseType_t xHigherPriorityTaskWoken;
+        // Init xHigherPriorityTaskWoken to pdFALSE. If vTaskNotifyGiveFromISR() clears Block on vIOTask,
+        // and vIOTask's priority > currently running task, xHigherPriorityTaskWoken will be set to pdTRUE
+        xHigherPriorityTaskWoken = pdFALSE;
 
-    // Notify xIOTask
-    vTaskNotifyGiveFromISR(xIOTask,&xHigherPriorityTaskWoken);
+        // Notify xIOTask
+        vTaskNotifyGiveFromISR(xIOTask, &xHigherPriorityTaskWoken);
 
-    // IF xHigherPriorityTaskWoken was set to true, force context switching
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken)
+        // IF xHigherPriorityTaskWoken was set to true, force context switching
+        portYIELD_FROM_ISR(xHigherPriorityTaskWoken)
+    }
     /* Old Non-RTOS Implementation
 #if DEBUG == 1
     if (IO_IRQ_WAITING) {

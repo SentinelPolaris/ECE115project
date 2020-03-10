@@ -14,15 +14,17 @@
 // Handy macros
 // do{..multiline statement}while(0) is a hack to make sure this works as single statement
 // for example below an if without {}
-#define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
-#define PRINT_MILLIS            Serial.print("[");Serial.print(millis());Serial.print("] ");
-#define LOG(param)              do{PRINT_MILLIS PRINT_LINE Serial.println(param);}while(0)
-#define LOGA(param)             do{PRINT_MILLIS PRINT_LINE Serial.print(param);}while(0)
-#define LOGERROR(param)         do{Serial.print("[ERROR]@"); LOG(param);}while(0)
-#define LOGWARNING(param)       do{Serial.print("[WARN]@"); LOG(param);}while(0)
-#define LOGWARNINGA(param)      do{Serial.print("[WARN]@"); LOGA(param);}while(0)
-#define PRINT(msg)              Serial.print(msg)
-#define PRINTLN(msg)            Serial.println(msg)
+
+#define LOGGER                  Serial
+#define PRINT_LINE              LOGGER.print(__FILE__);LOGGER.print(":");LOGGER.print(__LINE__);LOGGER.print(" ");
+#define PRINT_MILLIS            LOGGER.print("[");LOGGER.print(millis());LOGGER.print("] ");
+#define LOG(param)              do{PRINT_MILLIS PRINT_LINE LOGGER.println(param);}while(0)
+#define LOGA(param)             do{PRINT_MILLIS PRINT_LINE LOGGER.print(param);}while(0)
+#define LOGERROR(param)         do{LOGGER.print("[ERROR]@"); LOG(param);}while(0)
+#define LOGWARNING(param)       do{LOGGER.print("[WARN]@"); LOG(param);}while(0)
+#define LOGWARNINGA(param)      do{LOGGER.print("[WARN]@"); LOGA(param);}while(0)
+#define PRINT(msg)              LOGGER.print(msg)
+#define PRINTLN(msg)            LOGGER.println(msg)
 #define TIMER_START             __timer_temp = micros();
 #define TIMER_END               LOG(micros() - __timer_temp);
 
