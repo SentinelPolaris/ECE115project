@@ -14,7 +14,9 @@
 // BSD license, all text above must be included in any redistribution.
 
 #include <RGBmatrixPanel.h>
-
+// IR Pin -> Increase score LUT
+uint32_t IR2SCORE[] = {5, 10, 15, 20};
+bool updateScoreFlag = false;
 // Most of the signal pins are configurable, but the CLK pin has some
 // special constraints.  On 8-bit AVR boards it must be on PORTB...
 // Pin 8 works on the Arduino Uno & compatibles (e.g. Adafruit Metro),
@@ -38,12 +40,16 @@ RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
 int score = 0;
 void setup() {
+    Serial.begin(9600);
 
     matrix.begin();
     matrix.setFont(&Picopixel09edit4pt7b);
 }
 void updateScore() {
-    matrix.fillRect(0, 0, 20, 20, 0);
+    if (updateScoreFlag) {
+        matrix.fillRect(0, 0, 20, 20, 0);
+        updateScoreFlag = false;
+    }
     matrix.setCursor(10, 10);    // start at top left, with one pixel of spacing
     matrix.setTextSize(1);     // size 1 == 8 pixels high
     matrix.setTextWrap(false); // Don't wrap at end of line - will do ourselves
@@ -53,15 +59,19 @@ void updateScore() {
 }
 void loop() {
     // Do nothing -- image doesn't change
-    matrix.fillScreen(0);
+//    matrix.fillScreen(0);
 //    for (int i = 0; i < 10; i++) {
 //        matrix.drawCircleHelper(10, 10, (i-1)%10, 0x4, 0);
 //        matrix.drawCircleHelper(10, 10, i, 0x4, matrix.ColorHSV((i / 20.0) * 1536, 255, 255, true));
 //        delay(50);
 //    }
-    score += 1;
-    matrix.drawChar(27,20-score%20,'^',matrix.Color333(7,0,0),1,1);
+    if(Serial.available()) {
+        char scoreAddition = Serial.read();
+        score+=IR2SCORE[scoreAddition];
+        updateScoreFlag = true;
+    }
+//    matrix.drawChar(27,20-score%20,'^',matrix.Color333(7,0,0),1,1);
     delay(50);
-//    updateScore();
+    updateScore();
 //    matrix.swapBuffers(false);
 }

@@ -27,24 +27,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Pinball/src/peri/audio.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Pinball/src/peri/audio.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Electrical/PCB/MultiTB/eagle.epf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Electrical/PCB/MultiTB/eagle.epf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Electrical/PCB/TeensyBreakout/eagle.epf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Electrical/PCB/TeensyBreakout/eagle.epf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pinball/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Pinball/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Pinball.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/cmake-build-teensy40/Pinball.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pinball/src/os/arch.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/os/arch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/os/config.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/os/config.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/os/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/os/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/os/interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/os/interface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/peri/ioexp.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/peri/ioexp.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pinball/src/tasks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Pinball/src/tasks.cpp" afterDir="false" />
     </list>
     <ignored path="platformio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1472">
-              <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+            <state relative-caret-position="259">
+              <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -91,16 +83,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/4.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
+            <state relative-caret-position="2622">
               <caret line="114" column="34" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/Picopixel.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="463">
               <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
             </state>
           </provider>
@@ -109,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="4347">
               <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
             </state>
           </provider>
@@ -118,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
+            <state relative-caret-position="1081">
               <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
             </state>
           </provider>
@@ -130,6 +122,8 @@
     <findStrings>
       <find>^</find>
       <find>GFXFont</find>
+      <find>font</find>
+      <find>score</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,11 +139,11 @@
   <component name="OCResolveContextSettings">
     <option name="configuration" value="0-Z_DUMMY_TARGET" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1440" />
-    <option name="y" value="1103" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="252" />
+    <option name="y" value="23" />
     <option name="width" value="1400" />
-    <option name="height" value="877" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -211,6 +205,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/platformio.ini" />
     <property name="recentsLimit" value="5" />
@@ -311,7 +306,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake Application.PLATFORMIO_UPDATE" />
       <item itemvalue="CMake Application.PLATFORMIO_BUILD" />
       <item itemvalue="CMake Application.PLATFORMIO_BUILD_DEBUG" />
       <item itemvalue="CMake Application.PLATFORMIO_BUILD_VERBOSE" />
@@ -321,8 +315,9 @@
       <item itemvalue="CMake Application.PLATFORMIO_PROGRAM" />
       <item itemvalue="CMake Application.PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <item itemvalue="CMake Application.PLATFORMIO_TEST" />
-      <item itemvalue="CMake Application.PLATFORMIO_UPLOAD" />
+      <item itemvalue="CMake Application.PLATFORMIO_UPDATE" />
       <item itemvalue="CMake Application.PLATFORMIO_UPLOADFS" />
+      <item itemvalue="CMake Application.PLATFORMIO_UPLOAD" />
       <item itemvalue="CMake Application.Z_DUMMY_TARGET" />
     </list>
   </component>
@@ -337,11 +332,13 @@
       <option name="presentableId" value="Default" />
       <updated>1435919971910</updated>
       <workItem from="1581981476393" duration="3367000" />
+      <workItem from="1582063495788" duration="1082000" />
+      <workItem from="1583276747612" duration="3441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3402000" />
+    <option name="totallyTimeSpent" value="7925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,23 +350,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1440" y="1103" width="1400" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Structure" side_tool="true" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.179676" />
-      <window_info anchor="bottom" id="CMake" />
-      <window_info anchor="bottom" id="Serial Monitor" />
-      <window_info anchor="bottom" id="TODO" weight="0.32769832" />
-      <window_info anchor="bottom" id="Find" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Messages" visible="true" weight="0.3654096" />
-      <window_info anchor="right" id="make" />
-      <window_info anchor="right" id="Database" />
+      <window_info id="Project" order="0" visible="true" weight="0.13733906" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="CMake" order="0" />
+      <window_info anchor="bottom" id="Serial Monitor" order="1" />
+      <window_info anchor="bottom" id="Database Changes" order="2" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.32769832" />
+      <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.260078" />
+      <window_info anchor="right" id="make" order="0" />
+      <window_info anchor="right" id="Database" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_SPITFT.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -431,10 +421,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/4.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2622">
+          <caret line="114" column="34" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="4347">
           <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Adafruit_GFX.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduino-avr/cores/arduino/wiring.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3680">
+          <caret line="240" column="5" selection-start-line="240" selection-start-column="5" selection-end-line="240" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_digital.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduino-avr/cores/arduino/Arduino.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="127" column="16" lean-forward="true" selection-start-line="127" selection-start-column="16" selection-end-line="127" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -445,27 +480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/4.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="114" column="34" selection-start-line="114" selection-start-column="14" selection-end-line="114" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Adafruit GFX Library_Edit/Fonts/Picopixel.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="463">
           <caret line="116" column="10" selection-start-line="116" selection-start-column="10" selection-end-line="116" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1472">
-          <caret line="64" column="20" lean-forward="true" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

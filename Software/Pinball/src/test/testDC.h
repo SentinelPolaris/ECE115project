@@ -5,15 +5,19 @@
 #define PINBALL_TESTDC_H
 #pragma clang diagnostic ignored "-Wmissing-noreturn" // Disable clang inf loop warning
 
-#include "peri/pwm.h"
+#include <peri/ioexp.h>
+#include <peri/pwm.h>
 
 void testDC() {
+    DIO ioexp;
     PWM testPWM;
+    testPWM.set(0, 100);
+    testPWM.set(1, 100);
     while (true) {
-        for (uint8_t ii = 0; ii < 100; ii++) {
-            testPWM.set(0, ii);
-            dly(50);
-        }
+        dly(2000);
+        ioexp.setTBDirection(true);
+        dly(2000);
+        ioexp.setTBDirection(false);
     }
 }
 

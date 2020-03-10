@@ -2,22 +2,22 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="Pinball" targetName="PLATFORMIO_CLEAN" />
+      <config projectName="Pinball" targetName="Pinball" />
+      <config projectName="Pinball" targetName="PLATFORMIO_BUILD_DEBUG" />
+      <config projectName="Pinball" targetName="PLATFORMIO_UPLOAD" />
+      <config projectName="Pinball" targetName="PLATFORMIO_BUILD" />
       <config projectName="Pinball" targetName="PLATFORMIO_MONITOR" />
+      <config projectName="Pinball" targetName="PLATFORMIO_UPDATE_ALL" />
+      <config projectName="Pinball" targetName="PLATFORMIO_CLEAN" />
+      <config projectName="Pinball" targetName="PLATFORMIO_TEST" />
+      <config projectName="Pinball" targetName="PLATFORMIO_PROGRAM" />
+      <config projectName="Pinball" targetName="PLATFORMIO_DEVICE_LIST" />
+      <config projectName="Pinball" targetName="Z_DUMMY_TARGET" />
       <config projectName="Pinball" targetName="PLATFORMIO" />
       <config projectName="Pinball" targetName="PLATFORMIO_REBUILD_PROJECT_INDEX" />
       <config projectName="Pinball" targetName="PLATFORMIO_BUILD_VERBOSE" />
-      <config projectName="Pinball" targetName="PLATFORMIO_BUILD_DEBUG" />
-      <config projectName="Pinball" targetName="PLATFORMIO_DEVICE_LIST" />
-      <config projectName="Pinball" targetName="PLATFORMIO_UPLOAD" />
-      <config projectName="Pinball" targetName="DEBUG" />
-      <config projectName="Pinball" targetName="Pinball" />
-      <config projectName="Pinball" targetName="PLATFORMIO_BUILD" />
-      <config projectName="Pinball" targetName="PLATFORMIO_UPDATE_ALL" />
-      <config projectName="Pinball" targetName="PLATFORMIO_PROGRAM" />
-      <config projectName="Pinball" targetName="PLATFORMIO_TEST" />
-      <config projectName="Pinball" targetName="Z_DUMMY_TARGET" />
       <config projectName="Pinball" targetName="PLATFORMIO_UPLOADFS" />
+      <config projectName="Pinball" targetName="DEBUG" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -27,30 +27,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec922180-b3d3-40f1-af0b-2568113a9075" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/os/config.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/os/flags.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/os/interface.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/testIOExp.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Electrical/PCB/MultiTB/eagle.epf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Electrical/PCB/MultiTB/eagle.epf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Panel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panel/src/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Panel/src/test.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/Z_DUMMY_TARGET.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-teensy40/Pinball.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-teensy40/Pinball.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/os/arch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/arch.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/os/arch.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/arch.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/os/flags.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/flags.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/os/interface.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/interface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/os/config.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/config.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/os/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/os/interface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/os/interface.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/peri/ioexp.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/peri/ioexp.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/testDC.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/testDC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ioexp_test/interrupt_final/interrupt_final.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../ioexp_test/interrupt_final/interrupt_final.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tasks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks.cpp" afterDir="false" />
     </list>
     <ignored path="platformio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,25 +59,101 @@
     <favorites_list name="Pinball" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+              <folding>
+                <element signature="e#135#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/peri/peri.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+              <folding>
+                <element signature="e#93#111#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tasks.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="172" column="20" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
+              <folding>
+                <element signature="e#135#155#0" expanded="true" />
+                <element signature="e#315#2441#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/peri/ioexp.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/os/interface.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/os/config.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_inst.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="303">
+              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>EIFR</find>
-      <find>EI</find>
-      <find>EIFT</find>
-      <find>delay(</find>
-      <find>readGPIOAB</find>
-      <find>all</find>
-      <find>GPIOAB</find>
-      <find>clang</find>
+      <find>lib</find>
+      <find>CMAKE_CURR</find>
+      <find>libdeps</find>
+      <find>ulTimer</find>
+      <find>ulTimerCounter</find>
+      <find>configGENERATE_RUN_TIME_STATS</find>
+      <find>score</find>
+      <find>ioTask</find>
+      <find>solenoidQueue</find>
+      <find>speaker</find>
+      <find>DIO</find>
+      <find>Scoring</find>
+      <find>scor</find>
+      <find>s</find>
+      <find>getM</find>
+      <find>motor</find>
     </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/src/peri</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -98,31 +161,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ioexp.h" />
-        <option value="$PROJECT_DIR$/src/ThreadManager.h" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/pwm.h" />
-        <option value="$PROJECT_DIR$/src/os/thread.h" />
-        <option value="$PROJECT_DIR$/src/peri/pwm.h" />
-        <option value="$PROJECT_DIR$/src/io.h" />
-        <option value="$PROJECT_DIR$/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/Adafruit_MCP23017.cpp" />
-        <option value="$PROJECT_DIR$/src/test/testIOEXP.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/test/testDC.h" />
-        <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/src/os/interface.h" />
-        <option value="$PROJECT_DIR$/src/os/interface.cpp" />
-        <option value="$PROJECT_DIR$/src/os/flags.h" />
-        <option value="$PROJECT_DIR$/src/os/flags.cpp" />
-        <option value="$PROJECT_DIR$/src/os/arch.cpp" />
-        <option value="$PROJECT_DIR$/src/test/testIOExp.h" />
+        <option value="$PROJECT_DIR$/CMakeListsUser.txt" />
+        <option value="$PROJECT_DIR$/CMakeListsPrivate.txt" />
+        <option value="$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/FreeRTOSConfig.h" />
+        <option value="$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/port.c" />
+        <option value="$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/FreeRTOSConfig_default.h" />
         <option value="$PROJECT_DIR$/src/os/arch.h" />
-        <option value="$PROJECT_DIR$/src/peri/ioexp.h" />
+        <option value="$PROJECT_DIR$/src/os/arch.cpp" />
+        <option value="$PROJECT_DIR$/src/config.cpp" />
+        <option value="$PROJECT_DIR$/src/peri/peri.h" />
+        <option value="$PROJECT_DIR$/src/os/interface.cpp" />
+        <option value="$PROJECT_DIR$/src/os/config.cpp" />
         <option value="$PROJECT_DIR$/src/os/config.h" />
+        <option value="$PROJECT_DIR$/src/peri/ioexp.h" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/tasks.cpp" />
       </list>
     </option>
   </component>
-  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="OCFindUsagesOptions" text="false" ivars="false" properties="false" derivedClasses="false" />
   <component name="OCResolveContextSettings">
     <option name="configuration" value="0-Z_DUMMY_TARGET" />
   </component>
@@ -153,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,11 +226,6 @@
             <path>
               <item name="Pinball" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pinball" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -182,27 +234,18 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="os" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pinball" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="peri" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pinball" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/platformio.ini" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
@@ -210,11 +253,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/peripherals" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test" />
-      <recent name="$PROJECT_DIR$/src/peri" />
+      <recent name="$PROJECT_DIR$/src/os" />
+      <recent name="$PROJECT_DIR$/include" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -321,8 +361,8 @@
       <item itemvalue="CMake Application.PLATFORMIO_TEST" />
       <item itemvalue="CMake Application.PLATFORMIO_UPDATE" />
       <item itemvalue="CMake Application.PLATFORMIO_UPLOADFS" />
-      <item itemvalue="CMake Application.PLATFORMIO_UPLOAD" />
       <item itemvalue="CMake Application.Z_DUMMY_TARGET" />
+      <item itemvalue="CMake Application.PLATFORMIO_UPLOAD" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -335,36 +375,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1435919971910</updated>
-      <workItem from="1580803433968" duration="837000" />
-      <workItem from="1580804563929" duration="3882000" />
-      <workItem from="1580854199953" duration="1421000" />
-      <workItem from="1580855626408" duration="2244000" />
-      <workItem from="1580894505622" duration="2885000" />
-      <workItem from="1580977956350" duration="6385000" />
-      <workItem from="1580985500982" duration="1868000" />
+      <workItem from="1582906407183" duration="591000" />
+      <workItem from="1582907530532" duration="6168000" />
+      <workItem from="1582946006161" duration="6008000" />
+      <workItem from="1583043212080" duration="6600000" />
+      <workItem from="1583273771304" duration="9256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24608000" />
+    <option name="totallyTimeSpent" value="28662000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1057" extended-state="6" />
+    <frame x="1" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" id="Project" order="0" visible="true" weight="0.17196187" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" visible="true" weight="0.3719705" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
+      <window_info id="Project" order="0" visible="true" weight="0.1981402" />
+      <window_info id="Structure" order="1" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="CMake" order="0" weight="0.32665965" />
+      <window_info anchor="bottom" id="Serial Monitor" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
-      <window_info anchor="bottom" id="CMake" order="3" weight="0.24130663" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Serial Monitor" order="6" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.68914646" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="make" order="1" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.32899868" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32899868" />
+      <window_info anchor="bottom" id="Terminal" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" weight="0.32769832" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.19375813" />
+      <window_info anchor="right" id="make" order="0" />
+      <window_info anchor="right" id="Database" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,195 +427,195 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/libraries/Wire/WireIMXRT.cpp">
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/FreeRTOSConfig.h" />
+    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/FreeRTOS-Teensy4_ID6737/src/port.c" />
+    <entry file="file://$PROJECT_DIR$/platformio.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="322" column="12" selection-start-line="322" selection-start-column="10" selection-end-line="322" selection-end-column="12" />
+        <state relative-caret-position="138">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads/TeensyThreads.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="234" column="14" selection-start-line="234" selection-start-column="14" selection-end-line="234" selection-end-column="14" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/lib/README">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/libraries/TeensyThreads/TeensyThreads.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/FreeRTOS_TEENSY4.h">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/CMakeListsUser.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
+        <state relative-caret-position="23">
+          <caret line="1" column="84" selection-start-line="1" selection-start-column="84" selection-end-line="1" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeListsPrivate.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/delay.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="140">
+          <caret line="35" column="79" lean-forward="true" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/libraries/Wire/WireIMXRT.h">
+    <entry file="file://$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
-        </state>
+        <state relative-caret-position="-301" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30/Adafruit_PWMServoDriver.h">
+    <entry file="file://$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/port.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/Adafruit PWM Servo Driver Library_ID30/Adafruit_PWMServoDriver.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="66" column="4" lean-forward="true" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/yield.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/io.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/os/interrupt.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/os/interrupt.h" />
-    <entry file="file://$PROJECT_DIR$/src/ioexp.h" />
-    <entry file="file://$PROJECT_DIR$/src/ThreadManager.h" />
-    <entry file="file://$PROJECT_DIR$/src/io.h" />
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/Adafruit_MCP23017.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="41" column="15" lean-forward="true" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/sys/_stdint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.pio/libdeps/teensy40/Adafruit MCP23017 Arduino Library_ID334/Adafruit_MCP23017.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="219" column="24" selection-start-line="219" selection-start-column="24" selection-end-line="219" selection-end-column="24" />
+        <state relative-caret-position="139">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
           <folding>
-            <element signature="e#983#1005#0" expanded="true" />
+            <element signature="e#6433#6477#0" expanded="true" />
+            <element signature="e#7562#8803#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/testDC.h" />
-    <entry file="file://$PROJECT_DIR$/src/os/interface.cpp" />
+    <entry file="file://$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/FreeRTOSConfig_default.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="83" column="49" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial1.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="64" column="15" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/HardwareSerial.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="264" column="31" lean-forward="true" selection-start-line="264" selection-start-column="31" selection-end-line="264" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/os/interface.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="230">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/os/flags.h">
+    <entry file="file://$PROJECT_DIR$/lib/FreeRTOS-Teensy4-runtime_stats/src/FreeRTOSConfig.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/os/thread.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/peri/ioexp.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
-          <folding>
-            <element signature="e#96#121#0" expanded="true" />
-            <element signature="e#1710#1741#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/os/config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="90" selection-start-line="8" selection-start-column="90" selection-end-line="8" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/peri/pwm.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#92#128#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/testIOExp.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="162">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/os/arch.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/os/flags.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        <state relative-caret-position="249">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
           <folding>
-            <element signature="e#101#212#0" expanded="true" />
+            <element signature="e#188#217#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/os/arch.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        <state relative-caret-position="161">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1217">
+          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.h" />
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_serial.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="80" column="35" selection-start-line="80" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/WString.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="34" column="43" lean-forward="true" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/toolchain-gccarmnoneeabi/arm-none-eabi/include/stdio.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.platformio/packages/framework-arduinoteensy/cores/teensy4/usb_inst.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/os/config.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/os/interface.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/os/config.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/peri/ioexp.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/peri/peri.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#93#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
+          <folding>
+            <element signature="e#135#155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tasks.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="172" column="20" selection-start-line="172" selection-start-column="20" selection-end-line="172" selection-end-column="20" />
+          <folding>
+            <element signature="e#135#155#0" expanded="true" />
+            <element signature="e#315#2441#0" />
+          </folding>
         </state>
       </provider>
     </entry>
