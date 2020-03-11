@@ -26,7 +26,7 @@ bool updateScoreFlag = false;
 // Pin 8 works on the Adafruit Metro M0 or Arduino Zero,
 // Pin A4 works on the Adafruit Metro M4 (if using the Adafruit RGB
 // Matrix Shield, cut trace between CLK pads and run a wire to A4).
-uint16_t IR2SCORE[] = {5,10,15,20};
+
 #define CLK  8   // USE THIS ON ARDUINO UNO, ADAFRUIT METRO M0, etc.
 //#define CLK A4 // USE THIS ON METRO M4 (not M0)
 //#define CLK 11 // USE THIS ON ARDUINO MEGA
@@ -53,7 +53,7 @@ void setup() {
 void updateScore() {
     if (updateScoreFlag) {
         matrix.fillRect(0, 0, 20, 30, 0);
-        updateScoreFlag = false;
+        // updateScoreFlag = false;
     }
     matrix.setCursor(10, 10);    // start at top left, with one pixel of spacing
     matrix.setTextSize(1);     // size 1 == 8 pixels high
@@ -64,7 +64,7 @@ void updateScore() {
 }
 void loop() {
     // Do nothing -- image doesn't change
-   matrix.fillScreen(0);
+//    matrix.fillScreen(0);
    for (int i = 0; i < 10; i++) {
        matrix.drawCircleHelper(10, 10, (i-1)%10, 0x4, 0);
        matrix.drawCircleHelper(10, 10, i, 0x4, matrix.ColorHSV((i / 20.0) * 1536, 255, 255, true));
@@ -108,29 +108,43 @@ void loop() {
     }
 //    matrix.drawChar(27,20-score%20,'^',matrix.Color333(7,0,0),1,1);
     delay(50);
-    updateScore();
+    // updateScore();
 //    matrix.swapBuffers(false);
 }
 
 void solenoidCallback(){
-    Serial.println("solenoid");
+    // Serial.println("solenoid");
+    score += 20;
+    updateScoreFlag = true;
+    updateScore();
 }
 
 void IRGateCallbackR(){
-    Serial.println("IRGateR");
+    // Serial.println("IRGateR");
+    score += 10;
+    updateScoreFlag = true;
+    updateScore();
 }
 void IRGateCallbackL(){
-    Serial.println("IRGateL");
+    // Serial.println("IRGateL");
+    score += 10;
+    updateScoreFlag = true;
+    updateScore();
 }
 
 void slideCallback(){
-    Serial.println("slide");
+    // Serial.println("slide");
+    score += 5;
+    updateScoreFlag = true;
+    updateScore();
 }
 
 
 void gameOver(){
-    Serial.println("game over");
+    // Serial.println("game over");
     score = 0;
+    updateScoreFlag = true;
+    updateScore();
 }
 
 
