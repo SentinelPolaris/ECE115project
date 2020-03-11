@@ -6,6 +6,7 @@
 # The `CMakeListsUser.txt` will not be overwritten by PlatformIO.
 
 cmake_minimum_required(VERSION 3.2)
+
 project("Pinball")
 
 include(CMakeListsPrivate.txt)
@@ -86,4 +87,4 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_executable(Z_DUMMY_TARGET ${SRC_LIST} src/os/config.cpp src/config.h)
+add_executable(Z_DUMMY_TARGET ${SRC_LIST})

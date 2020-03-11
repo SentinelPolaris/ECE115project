@@ -10,6 +10,7 @@
 
 typedef struct {
     DIO ioexp;
+    DIO ioexp2;
     PWM motor;
 //    Audio speaker;
 }peri;

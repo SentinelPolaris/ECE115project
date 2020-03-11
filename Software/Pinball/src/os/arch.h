@@ -14,15 +14,17 @@
 // Handy macros
 // do{..multiline statement}while(0) is a hack to make sure this works as single statement
 // for example below an if without {}
-#define PRINT_LINE              Serial.print(__FILE__);Serial.print(":");Serial.print(__LINE__);Serial.print(" ");
-#define PRINT_MILLIS            Serial.print("[");Serial.print(millis());Serial.print("] ");
-#define LOG(param)              do{PRINT_MILLIS PRINT_LINE Serial.println(param);}while(0)
-#define LOGA(param)             do{PRINT_MILLIS PRINT_LINE Serial.print(param);}while(0)
-#define LOGERROR(param)         do{Serial.print("[ERROR]@"); LOG(param);}while(0)
-#define LOGWARNING(param)       do{Serial.print("[WARN]@"); LOG(param);}while(0)
-#define LOGWARNINGA(param)      do{Serial.print("[WARN]@"); LOGA(param);}while(0)
-#define PRINT(msg)              Serial.print(msg)
-#define PRINTLN(msg)            Serial.println(msg)
+
+#define LOGGER                  Serial
+#define PRINT_LINE              LOGGER.print(__FILE__);LOGGER.print(":");LOGGER.print(__LINE__);LOGGER.print(" ");
+#define PRINT_MILLIS            LOGGER.print("[");LOGGER.print(millis());LOGGER.print("] ");
+#define LOG(param)              do{PRINT_MILLIS PRINT_LINE LOGGER.println(param);}while(0)
+#define LOGA(param)             do{PRINT_MILLIS PRINT_LINE LOGGER.print(param);}while(0)
+#define LOGERROR(param)         do{LOGGER.print("[ERROR]@"); LOG(param);}while(0)
+#define LOGWARNING(param)       do{LOGGER.print("[WARN]@"); LOG(param);}while(0)
+#define LOGWARNINGA(param)      do{LOGGER.print("[WARN]@"); LOGA(param);}while(0)
+#define PRINT(msg)              LOGGER.print(msg)
+#define PRINTLN(msg)            LOGGER.println(msg)
 #define TIMER_START             __timer_temp = micros();
 #define TIMER_END               LOG(micros() - __timer_temp);
 
@@ -40,11 +42,11 @@
 //#define LOGERROR(fmt, ...)      Serial.printf("[ERROR]\t[%8lu]\t" __BASE_FILE__ ":%u " fmt "\n", millis(), __LINE__, ##__VA_ARGS__)
 
 // All Arduino Core
-extern int main();
+//extern int main();
 
-void setup();
-
-void loop();
+//void setup();
+//
+//void loop();
 
 // IRQ Pin Defs
 extern const uint8_t IRQ;
@@ -68,6 +70,7 @@ inline portTickType ms(uint32_t ms) {
     return ((ms * configTICK_RATE_HZ) / 1000L);
 }
 
+void vErr(String errMsg);
 
 //void __attribute__((__noreturn__)) os_panic(void) {
 //    LOGERROR("Panic handler called from 0x%08x !!!", __builtin_return_address(0));

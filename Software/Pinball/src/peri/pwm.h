@@ -21,18 +21,18 @@ public:
     }
 
     void stop() {
-        wireLock();
+//        wireLock();
         for(uint8_t index = 0; index < 16; index++) {
             pwm.setPWM(index, 0, 0);
         }
-        wireUnlock();
+//        wireUnlock();
     }
 
     void set(uint8_t port, uint8_t dutyCycle) {
         uint16_t endTime = (4095 * dutyCycle) / 100;
-        wireLock();
+//        wireLock();
         pwm.setPWM(port, 0, endTime);
-        wireUnlock();
+//        wireUnlock();
     }
 
 protected:
