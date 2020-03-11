@@ -39,11 +39,12 @@ int main() {
     RGB_PANEL.begin(9600);
     ESP.begin(9600);
     SPEAKER_TEENSY.begin(9600);
-
-    delay(4000);
+    // Wait for USB set up
+    delay(2000);
     LOG("System initializing...");
     i2cCheck();
     teensyperi.ioexp.init();
+    teensyperi.ioexp2.init2();
     teensyperi.motor.init();
 
 
@@ -63,7 +64,7 @@ int main() {
     s7 = xTaskCreate(vSpeakerTask,   "Speaker",            1024, (void *) &teensyperi,   2, &xSpeakerTask);
 
     // Tests
-//    xTaskCreate(vPingTestTask, "PingTest", 512, NULL, 0, &xPingTestTask);
+//    xTaskCreate(vPingTestTask, "PingTest", 512, (void *) &teensyperi, 0, &xPingTestTask);
 //    xTaskCreate(vPongTestTask, "PongTest", 512, NULL, 0, &xPongTestTask);
 //    xTaskCreate(vTestISRTask, "ISRTest", 512, (void *) &teensyperi, 0, &xTestISRTask);
 

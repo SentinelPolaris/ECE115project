@@ -4,14 +4,14 @@
 #include "arch.h"
 const uint8_t IRQ = 2;
 
-void setup() {
-    dly(500);  // NOTE: USB Terminal doesn't work if enabled at the beginning of bootup
-}
-
-void loop() {
-    main();
-    while (true) { asm("nop"); }
-}
+//void setup() {
+////    dly(500);  // NOTE: USB Terminal doesn't work if enabled at the beginning of bootup
+//}
+//
+//void loop() {
+//    main();
+//    while (true) { asm("nop"); }
+//}
 
 void vErr(String errMsg) {
     for(;;) {

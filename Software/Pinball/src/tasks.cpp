@@ -164,7 +164,10 @@ void vScoreTask(void* arg) {
         if(xQueueReceive(IREventQueue, irPin, portMAX_DELAY)) {
             LOGA("ScoreTask Received from Queue:");
             PRINTLN(*irPin);
-            RGB_PANEL.print((char)*irPin);
+            RGB_PANEL.print((String)*irPin + "|");
+//            switch(*irPin) {
+//                case
+//            }
         } else
             LOGWARNING("Time out receiving IRPin from Queue. This should not happen.");
     }
@@ -207,11 +210,19 @@ void vSolenoidTask(void* arg) {
 
 void vPingTestTask(void* arg) {
 //    uint8_t irqPin = 5;
+//    DIO ioexp2 = (*((peri *)arg)).ioexp2;
     for(;;) {
-        if(ESP.available()) {
-            ESP.print(ESP.read());
-        }
-        vDelay(100);
+        RGB_PANEL.print("0|");
+        vDelay(1000);
+        RGB_PANEL.print("1|");
+        vDelay(1000);
+        RGB_PANEL.print("2|");
+        vDelay(1000);
+        RGB_PANEL.print("wdnmd|");
+//        ioexp2.write(0, HIGH);
+//        vDelay(100);
+//        ioexp2.write(0, LOW);
+//        vDelay(100);
 //        irqPin++;
 //        LOG("Sending on queue");
 //        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {

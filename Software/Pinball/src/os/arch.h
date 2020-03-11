@@ -42,11 +42,11 @@
 //#define LOGERROR(fmt, ...)      Serial.printf("[ERROR]\t[%8lu]\t" __BASE_FILE__ ":%u " fmt "\n", millis(), __LINE__, ##__VA_ARGS__)
 
 // All Arduino Core
-extern int main();
+//extern int main();
 
-void setup();
-
-void loop();
+//void setup();
+//
+//void loop();
 
 // IRQ Pin Defs
 extern const uint8_t IRQ;

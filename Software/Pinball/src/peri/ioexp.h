@@ -18,9 +18,16 @@ public:
         pinMode(IRQ, INPUT_PULLUP);
         mcp.begin();
         configureTb();
-//        reset1();
+        reset1();
     }
 
+    void init2() {
+        LOG("Initializing IO Expander");
+        pinMode(IRQ, INPUT_PULLUP);
+        mcp.begin(1);
+        reset2();
+        initLED();
+    }
 //    void init2() {
 //        LOG("Initializing IO Expander with Addr");
 //        mcp.begin(1);
@@ -37,6 +44,15 @@ public:
         configureIRGate(IOEXP_SLIDE_PIN);
         configureIRGate(IOEXP_GAMEOVER_PIN);
         attachInterrupt(IRQ, IOISR, FALLING);  // Put at the very last because ISR may be executed any time from now
+    }
+
+    void initLED() {
+        mcp.pinMode(0, OUTPUT);
+        mcp.pinMode(1, OUTPUT);
+        mcp.pinMode(2, OUTPUT);
+        mcp.pinMode(3, OUTPUT);
+        mcp.pinMode(6, OUTPUT);
+        mcp.pinMode(7, OUTPUT);
     }
 
     void configureTb() {
