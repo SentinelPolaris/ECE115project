@@ -4,6 +4,8 @@
 #include <Fonts/Tiny3x3a2pt7b.h>
 #include <Fonts/Picopixel.h>
 #include <Fonts/4.h>
+#include "gdiCommando.h"
+
 // testshapes demo for Adafruit RGBmatrixPanel library.
 // Demonstrates the drawing abilities of the RGBmatrixPanel library.
 // For 32x32 RGB LED matrix:
@@ -15,7 +17,6 @@
 
 #include <RGBmatrixPanel.h>
 // IR Pin -> Increase score LUT
-uint32_t IR2SCORE[] = {5, 10, 15, 20};
 bool updateScoreFlag = false;
 // Most of the signal pins are configurable, but the CLK pin has some
 // special constraints.  On 8-bit AVR boards it must be on PORTB...
@@ -25,7 +26,7 @@ bool updateScoreFlag = false;
 // Pin 8 works on the Adafruit Metro M0 or Arduino Zero,
 // Pin A4 works on the Adafruit Metro M4 (if using the Adafruit RGB
 // Matrix Shield, cut trace between CLK pads and run a wire to A4).
-
+uint16_t IR2SCORE[] = {5,10,15,20};
 #define CLK  8   // USE THIS ON ARDUINO UNO, ADAFRUIT METRO M0, etc.
 //#define CLK A4 // USE THIS ON METRO M4 (not M0)
 //#define CLK 11 // USE THIS ON ARDUINO MEGA
@@ -38,16 +39,20 @@ bool updateScoreFlag = false;
 
 RGBmatrixPanel matrix(A, B, C, D, CLK, LAT, OE, false);
 
+
+
 int score = 0;
 void setup() {
     Serial.begin(9600);
+
+    Serial.setTimeout(1000);
 
     matrix.begin();
     matrix.setFont(&Picopixel09edit4pt7b);
 }
 void updateScore() {
     if (updateScoreFlag) {
-        matrix.fillRect(0, 0, 20, 20, 0);
+        matrix.fillRect(0, 0, 20, 30, 0);
         updateScoreFlag = false;
     }
     matrix.setCursor(10, 10);    // start at top left, with one pixel of spacing
@@ -59,19 +64,73 @@ void updateScore() {
 }
 void loop() {
     // Do nothing -- image doesn't change
-//    matrix.fillScreen(0);
-//    for (int i = 0; i < 10; i++) {
-//        matrix.drawCircleHelper(10, 10, (i-1)%10, 0x4, 0);
-//        matrix.drawCircleHelper(10, 10, i, 0x4, matrix.ColorHSV((i / 20.0) * 1536, 255, 255, true));
-//        delay(50);
-//    }
+   matrix.fillScreen(0);
+   for (int i = 0; i < 10; i++) {
+       matrix.drawCircleHelper(10, 10, (i-1)%10, 0x4, 0);
+       matrix.drawCircleHelper(10, 10, i, 0x4, matrix.ColorHSV((i / 20.0) * 1536, 255, 255, true));
+       delay(50);
+   }
     if(Serial.available()) {
-        char scoreAddition = Serial.read();
-        score+=IR2SCORE[scoreAddition];
-        updateScoreFlag = true;
+        // char scoreAddition = Serial.read();
+        // score+=IR2SCORE[scoreAddition];
+        // updateScoreFlag = true;
+        String scoreAddition = Serial.readStringUntil('|');
+        if(scoreAddition.equals("12")){
+            gameOver();
+        }
+        else if(scoreAddition.equals("8") || scoreAddition.equals("9") || scoreAddition.equals("10") || scoreAddition.equals("11")){
+            scoreAddition.remove(scoreAddition.indexOf('|'));
+            int scoreOption = scoreAddition.toInt() - 8;
+
+            switch (scoreOption)
+            {
+            case 0:
+                solenoidCallback();
+                break;
+            case 1:
+                IRGateCallbackL();
+                break:
+            case 2:
+                IRGateCallbackR();
+                break;
+            case 3:
+                slideCallback();
+            default:
+                break;
+            }
+            
+        }
+        else{
+
+        }
+
+
     }
 //    matrix.drawChar(27,20-score%20,'^',matrix.Color333(7,0,0),1,1);
     delay(50);
     updateScore();
 //    matrix.swapBuffers(false);
 }
+
+void solenoidCallback(){
+    Serial.println("solenoid");
+}
+
+void IRGateCallbackR(){
+    Serial.println("IRGateR");
+}
+void IRGateCallbackL(){
+    Serial.println("IRGateL");
+}
+
+void slideCallback(){
+    Serial.println("slide");
+}
+
+
+void gameOver(){
+    Serial.println("game over");
+    score = 0;
+}
+
+
