@@ -4,7 +4,7 @@
 #include <Fonts/Tiny3x3a2pt7b.h>
 #include <Fonts/Picopixel.h>
 #include <Fonts/4.h>
-#include "gdiCommando.h"
+
 
 // testshapes demo for Adafruit RGBmatrixPanel library.
 // Demonstrates the drawing abilities of the RGBmatrixPanel library.
