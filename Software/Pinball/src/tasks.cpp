@@ -75,19 +75,19 @@ void vHeartBeatTask(void *arg) {
 void vIOUnstuckTask(void* arg) {
     DIO ioexp = (*((peri *)arg)).ioexp;
     for(;;){
+        taskENTER_CRITICAL();
         ioexp.clearInterrupt();
+        taskEXIT_CRITICAL();
         vDelay(500);
     }
 }
 
 void vIOTask(void* arg) {
-    LOG("Init IO");
     DIO ioexp = (*((peri *)arg)).ioexp;
     ioexp.initIRQ();  // NOTE: Delayed init interrupt here because ISR is only safe after this task has been started
     for(;;) {
         // Block task while waiting for notification from ISR.
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-        LOG("IRQ Notification RX!");
         uint16_t irqInfo;
         uint8_t irqPin, irqVal;
         // FIXME: For now disabled critical section. Sometime freezes and that may be because of this
@@ -95,10 +95,11 @@ void vIOTask(void* arg) {
         irqInfo = ioexp.readInterruptPin();
         irqVal = (irqInfo & 0xFFu); // Lower 8 bit is value
         irqPin = (irqInfo >> 8u);   // Upper 8 bit is pin
-        LOG(irqPin);
+        LOG("IRQ -- " + String(irqPin));
         if(irqPin == 255) {
             LOGWARNING("Skipped 255 pin in IRQ Task!");
 //            wireUnlock();
+            ISRHandled = true;
             continue;
         }
         // Send IRQ Pin right away, but still continue SW debounce process
@@ -122,7 +123,6 @@ void vIOTask(void* arg) {
                 LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
             }
         }
-        LOG("Starting debounce");
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
 #endif
@@ -132,7 +132,6 @@ void vIOTask(void* arg) {
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
 #endif
-        LOG("Debounce Done");
         ISRHandled = true;
 //        IO_IRQ_WAITING = false;
 //        wireUnlock();

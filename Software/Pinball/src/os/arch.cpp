@@ -12,3 +12,14 @@ void loop() {
     main();
     while (true) { asm("nop"); }
 }
+
+void vErr(String errMsg) {
+    for(;;) {
+        LOGERROR(errMsg);
+        ESP.println(errMsg);
+        vTaskDelay(2000);
+#if DEBUG == 0
+        return;
+#endif
+    }
+}

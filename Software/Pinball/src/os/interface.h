@@ -33,4 +33,6 @@ inline void wireUnlock() {
 //    WIRE_CURRENTLY_USED = false;
 }
 
+void i2cCheck();
+
 #endif //PINBALL_INTERFACE_H

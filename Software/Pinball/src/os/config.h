@@ -15,10 +15,10 @@
 
 // Interrupt Pins
 #define IOEXP_SOLENOID_PIN 8
-#define IOEXP_TOP1_PIN 9
-#define IOEXP_TOP2_PIN 10
+#define IOEXP_TOP_L_PIN 9
+#define IOEXP_TOP_R_PIN 10
 #define IOEXP_SLIDE_PIN 11
-#define IOEXP_ENDGAME_PIN 15
+#define IOEXP_GAMEOVER_PIN 12
 
 extern char IR2WAV[IR_TRG_PINS_AMOUNT];
 #endif //PINBALL_CONFIG_H`

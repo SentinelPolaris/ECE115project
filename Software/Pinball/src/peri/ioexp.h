@@ -32,9 +32,10 @@ public:
         mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
         // TODO: Add more IR definitions
         configureIRGate(IOEXP_SOLENOID_PIN);
-        configureIRGate(IOEXP_TOP1_PIN);
-        configureIRGate(IOEXP_TOP2_PIN);
+        configureIRGate(IOEXP_TOP_L_PIN);
+        configureIRGate(IOEXP_TOP_R_PIN);
         configureIRGate(IOEXP_SLIDE_PIN);
+        configureIRGate(IOEXP_GAMEOVER_PIN);
         attachInterrupt(IRQ, IOISR, FALLING);  // Put at the very last because ISR may be executed any time from now
     }
 
@@ -79,6 +80,9 @@ public:
         mcp.pinMode(p, INPUT);
         mcp.pullUp(p, LOW);  // turn on a 100K pulldown internally
         mcp.setupInterruptPin(p, RISING);
+        if(read(p) != 0) {
+            vErr("IR Gate Blocked at init @ pin=" + String(p));
+        }
     }
 
     void reset1() {
@@ -115,7 +119,7 @@ public:
     inline void clearInterrupt() {
         // NOTE: Caller don't worry about locking
         // NOTE: To be safe, periodically call this to clear potential stuck due to non-cleared interrupt
-        wireLock();
+//        wireLock();
 #if DEBUG == 1
         uint8_t pin = mcp.getLastInterruptPin();
         if (pin != 255u) {
@@ -128,7 +132,7 @@ public:
 #else
         mcp.getLastInterruptPinValue();
 #endif
-        wireUnlock();
+//        wireUnlock();
     }
 
 protected:

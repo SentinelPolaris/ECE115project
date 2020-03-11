@@ -36,11 +36,15 @@ int main() {
     digitalWrite(10, HIGH);
     // MCU init
     Serial.begin(115200);
-    teensyperi.ioexp.init();
-    teensyperi.motor.init();
     RGB_PANEL.begin(9600);
     ESP.begin(9600);
     SPEAKER_TEENSY.begin(9600);
+
+    delay(4000);
+    LOG("System initializing...");
+    i2cCheck();
+    teensyperi.ioexp.init();
+    teensyperi.motor.init();
 
 
     // FREERTOS tasks
@@ -64,10 +68,10 @@ int main() {
 //    xTaskCreate(vTestISRTask, "ISRTest", 512, (void *) &teensyperi, 0, &xTestISRTask);
 
     // Check for creation errors
-    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS || s4 != pdPASS || s5 != pdPASS || s6 != pdPASS ||
-        s7 != pdPASS) {
-        LOGERROR("Tasks creation error!");
-    }
+//    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS || s4 != pdPASS || s5 != pdPASS || s6 != pdPASS ||
+//        s7 != pdPASS) {
+//        LOGERROR("Tasks creation error!");
+//    }
     LOG("Starting the scheduler!");
     vTaskStartScheduler();
 
