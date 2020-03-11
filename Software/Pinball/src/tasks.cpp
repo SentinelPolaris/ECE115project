@@ -210,19 +210,14 @@ void vSolenoidTask(void* arg) {
 
 void vPingTestTask(void* arg) {
 //    uint8_t irqPin = 5;
-//    DIO ioexp2 = (*((peri *)arg)).ioexp2;
+    DIO ioexp2 = (*((peri *)arg)).ioexp2;
     for(;;) {
-        RGB_PANEL.print("0|");
-        vDelay(1000);
-        RGB_PANEL.print("1|");
-        vDelay(1000);
-        RGB_PANEL.print("2|");
-        vDelay(1000);
-        RGB_PANEL.print("wdnmd|");
-//        ioexp2.write(0, HIGH);
-//        vDelay(100);
-//        ioexp2.write(0, LOW);
-//        vDelay(100);
+        ioexp2.write(0, HIGH);
+        ioexp2.write(1, HIGH);
+        vDelay(100);
+        ioexp2.write(0, LOW);
+        ioexp2.write(1, LOW);
+        vDelay(100);
 //        irqPin++;
 //        LOG("Sending on queue");
 //        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {

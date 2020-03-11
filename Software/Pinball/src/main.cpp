@@ -64,7 +64,7 @@ int main() {
     s7 = xTaskCreate(vSpeakerTask,   "Speaker",            1024, (void *) &teensyperi,   2, &xSpeakerTask);
 
     // Tests
-//    xTaskCreate(vPingTestTask, "PingTest", 512, (void *) &teensyperi, 0, &xPingTestTask);
+    xTaskCreate(vPingTestTask, "PingTest", 512, (void *) &teensyperi, 0, &xPingTestTask);
 //    xTaskCreate(vPongTestTask, "PongTest", 512, NULL, 0, &xPongTestTask);
 //    xTaskCreate(vTestISRTask, "ISRTest", 512, (void *) &teensyperi, 0, &xTestISRTask);
 
