@@ -103,13 +103,6 @@ void vIOTask(void* arg) {
             continue;
         }
         // Send IRQ Pin right away, but still continue SW debounce process
-        // Send to speaker and IREvent(score/graphics) anyways
-        if(xQueueSend(speakerQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin to speakerQueue. Full?");
-        }
-        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
-        }
         // Send to solenoid only if it's solenoid
         if(irqPin == IOEXP_SOLENOID_PIN) {
             if (millis() - lastSolenoidTriggered < 2000) {
@@ -122,6 +115,13 @@ void vIOTask(void* arg) {
             if (xQueueSend(solenoidQueue, (void *) &irqPin, ms(1)) != pdPASS) {
                 LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
             }
+        }
+        // Send to speaker and IREvent(score/graphics)
+        if(xQueueSend(speakerQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to speakerQueue. Full?");
+        }
+        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
         }
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
