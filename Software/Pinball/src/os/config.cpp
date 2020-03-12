@@ -13,9 +13,9 @@ char IR2WAV[IR_TRG_PINS_AMOUNT] = {
         0,  // 5 Not Used
         0,  // 6 Not Used
         0,  // 7 Not Used
-        0,  // 8 Solenoid
-        1,  // 9 Top Left
+        1,  // 8 Solenoid
+        3,  // 9 Top Left
         2,  // 10 Top Right
-        3,  // 11 Slide
-        4,  // 12 Game over
+        4,  // 11 Slide
+        0,  // 12 Game over
 };

@@ -9,6 +9,7 @@
 #include <SPI.h>
 #include <SD.h>
 #include <SerialFlash.h>
+#define HWSERIAL Serial4
 
 // GUItool: begin automatically generated code
 AudioPlaySdWav           playWav2;     //xy=258,253
@@ -24,7 +25,8 @@ AudioConnection          patchCord5(mixer2, 0, audioOutput, 1);
 AudioConnection          patchCord6(mixer1, 0, audioOutput, 0);
 AudioControlSGTL5000     sgtl5000_1;     //xy=656,333
 // GUItool: end automatically generated code
-
+uint8_t currentBGMIndex = -1;  // -1 so the first time it goes to 0
+uint8_t avilBGM[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 // Use these with the Teensy Audio Shield
 #define SDCARD_CS_PIN    10
@@ -33,7 +35,7 @@ AudioControlSGTL5000     sgtl5000_1;     //xy=656,333
 
 void setup() {
   Serial.begin(9600);
-
+  HWSERIAL.begin(9600);
   // Audio connections require memory to work.  For more
   // detailed information, see the MemoryAndCpuUsage example
   AudioMemory(8);
@@ -53,6 +55,10 @@ void setup() {
       delay(500);
     }
   }
+
+  // Volume for playWav2
+  mixer1.gain(1, 0.9);
+  mixer2.gain(1, 0.9);
 }
 
 void playFile1(const char *filename)
@@ -65,16 +71,7 @@ void playFile1(const char *filename)
   playWav1.play(filename);
 
   // A brief delay for the library read WAV info
-  delay(500);
-
-  // Simply wait for the file to finish playing.
-  //  while (playWav1.isPlaying()) {
-  //    // uncomment these lines if you audio shield
-  //    // has the optional volume pot soldered
-  //    //float vol = analogRead(15);
-  //    //vol = vol / 1024;
-  //    // sgtl5000_1.volume(vol);
-  //  }
+  delay(10);
 }
 
 void playFile2(const char *filename)
@@ -87,27 +84,36 @@ void playFile2(const char *filename)
   playWav2.play(filename);
 
   // A brief delay for the library read WAV info
-  delay(500);
+  delay(10);
+}
 
-  // Simply wait for the file to finish playing.
-  //  while (playWav1.isPlaying()) {
-  //    // uncomment these lines if you audio shield
-  //    // has the optional volume pot soldered
-  //    //float vol = analogRead(15);
-  //    //vol = vol / 1024;
-  //    // sgtl5000_1.volume(vol);
-  //  }
+void switchBGM() {
+  currentBGMIndex = (currentBGMIndex + 1) % 10;
+  char filename[20];
+  sprintf(filename, "BGM%d.WAV", avilBGM[currentBGMIndex]);
+  playFile1(filename);  // filenames are always uppercase 8.3 format
 }
 
 void loop() {
-  // Volumne for playWav1
-  mixer1.gain(0, 0.1);
-  mixer2.gain(0, 0.1);
-  // Volume for playWav2
-  mixer1.gain(1, 0.9);
-  mixer2.gain(1, 0.9);
-  playFile1("0.WAV");  // filenames are always uppercase 8.3 format
-  playFile2("1.WAV");
-  playFile1("2.WAV");
-  playFile2("3.WAV");
+  // Current BGM ended or haven't started
+  if (!playWav1.isPlaying()) {
+    switchBGM();
+  }
+  if (!playWav2.isPlaying()) {
+    mixer1.gain(0, 0.9);
+    mixer2.gain(0, 0.9);
+  }
+  if (HWSERIAL.available() > 0) {
+    char incomingByte = HWSERIAL.read();
+    if (incomingByte == 0) {  // Game over
+      switchBGM();
+    }
+    char filename[20];
+    sprintf(filename, "%d.wav", incomingByte);
+    Serial.println(filename);
+    mixer1.gain(0, 0.1);
+    mixer2.gain(0, 0.1);
+    playFile2(filename);
+  }
+
 }

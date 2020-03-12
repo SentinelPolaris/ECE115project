@@ -143,17 +143,27 @@ void vWheelTask(void* arg) {
     DIO ioexp = (*((peri *)arg)).ioexp;
     ioexp.setTBDirection(true);
     for(;;) {
-//        taskENTER_CRITICAL();
-        motor.set(0, 50);
-        motor.set(1, 100);
-        ioexp.setTBDirection(true);
-//        taskEXIT_CRITICAL();
-        vDelay(1000);
-//        taskENTER_CRITICAL();
-        motor.set(0, 100);
+        taskENTER_CRITICAL();
+        motor.set(0, 20);
         motor.set(1, 50);
+        ioexp.setTBDirection(true);
+        taskEXIT_CRITICAL();
+        vDelay(2000);
+        taskENTER_CRITICAL();
+        motor.set(0, 0);
+        motor.set(1, 0);
+        taskEXIT_CRITICAL();
+        vDelay(1000);
+        taskENTER_CRITICAL();
+        motor.set(0, 50);
+        motor.set(1, 20);
         ioexp.setTBDirection(false);
-//        taskEXIT_CRITICAL();
+        taskEXIT_CRITICAL();
+        vDelay(2000);
+        taskENTER_CRITICAL();
+        motor.set(0, 0);
+        motor.set(1, 0);
+        taskEXIT_CRITICAL();
         vDelay(1000);
     }
 }
@@ -213,11 +223,15 @@ void vPingTestTask(void* arg) {
     DIO ioexp2 = (*((peri *)arg)).ioexp2;
     for(;;) {
         ioexp2.write(0, HIGH);
-        ioexp2.write(1, HIGH);
-        vDelay(100);
-        ioexp2.write(0, LOW);
         ioexp2.write(1, LOW);
-        vDelay(100);
+        ioexp2.write(2, HIGH);
+        ioexp2.write(3, LOW);
+        vDelay(300);
+        ioexp2.write(0, LOW);
+        ioexp2.write(1, HIGH);
+        ioexp2.write(2, LOW);
+        ioexp2.write(3, HIGH);
+        vDelay(300);
 //        irqPin++;
 //        LOG("Sending on queue");
 //        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {
