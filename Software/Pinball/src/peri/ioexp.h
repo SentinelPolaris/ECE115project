@@ -16,24 +16,19 @@ public:
     void init() {
         LOG("Initializing IO Expander");
         pinMode(IRQ, INPUT_PULLUP);
+        reset1();
         mcp.begin();
         configureTb();
-        reset1();
     }
 
     void init2() {
         LOG("Initializing IO Expander");
         pinMode(IRQ, INPUT_PULLUP);
-        mcp.begin(1);
         reset2();
+        mcp.begin(1);
         initLED();
     }
-//    void init2() {
-//        LOG("Initializing IO Expander with Addr");
-//        mcp.begin(1);
-//        configureLED();
-//        reset2();
-//    }
+
     // NOTE: After this called, immediately ISR may be executed
     void initIRQ() {
         mcp.setupInterrupts(true, false, LOW);  // Mirror AB, Not OpenDrain, INTA/B Goes Low when Interrupt
@@ -111,6 +106,7 @@ public:
         digitalWrite(10, LOW);
         dly(200);
         digitalWrite(10, HIGH);
+        dly(200);
     }
 
     uint8_t read(uint8_t p) {

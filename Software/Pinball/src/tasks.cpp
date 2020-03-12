@@ -103,13 +103,6 @@ void vIOTask(void* arg) {
             continue;
         }
         // Send IRQ Pin right away, but still continue SW debounce process
-        // Send to speaker and IREvent(score/graphics) anyways
-        if(xQueueSend(speakerQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin to speakerQueue. Full?");
-        }
-        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
-            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
-        }
         // Send to solenoid only if it's solenoid
         if(irqPin == IOEXP_SOLENOID_PIN) {
             if (millis() - lastSolenoidTriggered < 2000) {
@@ -122,6 +115,13 @@ void vIOTask(void* arg) {
             if (xQueueSend(solenoidQueue, (void *) &irqPin, ms(1)) != pdPASS) {
                 LOGWARNING("Failed to enqueue IRQ Pin to solenoidQueue. Full?");
             }
+        }
+        // Send to speaker and IREvent(score/graphics)
+        if(xQueueSend(speakerQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to speakerQueue. Full?");
+        }
+        if(xQueueSend(IREventQueue, (void *)&irqPin, ms(1)) != pdPASS) {
+            LOGWARNING("Failed to enqueue IRQ Pin to IREventQueue. Full?");
         }
 #if IOIRQ_SW_DEBOUNCE == 1
         vDelay(IOIRQ_SW_DEBOUNCE_MS);  // CRITICAL: Debounce (used to compensate bounce back after IRQ goes back)
@@ -143,17 +143,27 @@ void vWheelTask(void* arg) {
     DIO ioexp = (*((peri *)arg)).ioexp;
     ioexp.setTBDirection(true);
     for(;;) {
-//        taskENTER_CRITICAL();
-        motor.set(0, 50);
-        motor.set(1, 100);
-        ioexp.setTBDirection(true);
-//        taskEXIT_CRITICAL();
-        vDelay(1000);
-//        taskENTER_CRITICAL();
-        motor.set(0, 100);
+        taskENTER_CRITICAL();
+        motor.set(0, 20);
         motor.set(1, 50);
+        ioexp.setTBDirection(true);
+        taskEXIT_CRITICAL();
+        vDelay(2000);
+        taskENTER_CRITICAL();
+        motor.set(0, 0);
+        motor.set(1, 0);
+        taskEXIT_CRITICAL();
+        vDelay(1000);
+        taskENTER_CRITICAL();
+        motor.set(0, 50);
+        motor.set(1, 20);
         ioexp.setTBDirection(false);
-//        taskEXIT_CRITICAL();
+        taskEXIT_CRITICAL();
+        vDelay(2000);
+        taskENTER_CRITICAL();
+        motor.set(0, 0);
+        motor.set(1, 0);
+        taskEXIT_CRITICAL();
         vDelay(1000);
     }
 }
@@ -210,19 +220,18 @@ void vSolenoidTask(void* arg) {
 
 void vPingTestTask(void* arg) {
 //    uint8_t irqPin = 5;
-//    DIO ioexp2 = (*((peri *)arg)).ioexp2;
+    DIO ioexp2 = (*((peri *)arg)).ioexp2;
     for(;;) {
-        RGB_PANEL.print("0|");
-        vDelay(1000);
-        RGB_PANEL.print("1|");
-        vDelay(1000);
-        RGB_PANEL.print("2|");
-        vDelay(1000);
-        RGB_PANEL.print("wdnmd|");
-//        ioexp2.write(0, HIGH);
-//        vDelay(100);
-//        ioexp2.write(0, LOW);
-//        vDelay(100);
+        ioexp2.write(0, HIGH);
+        ioexp2.write(1, LOW);
+        ioexp2.write(2, HIGH);
+        ioexp2.write(3, LOW);
+        vDelay(300);
+        ioexp2.write(0, LOW);
+        ioexp2.write(1, HIGH);
+        ioexp2.write(2, LOW);
+        ioexp2.write(3, HIGH);
+        vDelay(300);
 //        irqPin++;
 //        LOG("Sending on queue");
 //        if(xQueueSend(testQueue, (void *)&irqPin, ms(1)) != pdPASS) {

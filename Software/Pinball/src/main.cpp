@@ -64,15 +64,15 @@ int main() {
     s7 = xTaskCreate(vSpeakerTask,   "Speaker",            1024, (void *) &teensyperi,   2, &xSpeakerTask);
 
     // Tests
-//    xTaskCreate(vPingTestTask, "PingTest", 512, (void *) &teensyperi, 0, &xPingTestTask);
+    xTaskCreate(vPingTestTask, "PingTest", 512, (void *) &teensyperi, 0, &xPingTestTask);
 //    xTaskCreate(vPongTestTask, "PongTest", 512, NULL, 0, &xPongTestTask);
 //    xTaskCreate(vTestISRTask, "ISRTest", 512, (void *) &teensyperi, 0, &xTestISRTask);
 
     // Check for creation errors
-//    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS || s4 != pdPASS || s5 != pdPASS || s6 != pdPASS ||
-//        s7 != pdPASS) {
-//        LOGERROR("Tasks creation error!");
-//    }
+    if (s1 != pdPASS || s2 != pdPASS || s3 != pdPASS || s4 != pdPASS || s5 != pdPASS || s6 != pdPASS ||
+        s7 != pdPASS) {
+        LOGERROR("Tasks creation error!");
+    }
     LOG("Starting the scheduler!");
     vTaskStartScheduler();
 
